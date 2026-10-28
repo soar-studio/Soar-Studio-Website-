@@ -4,7 +4,7 @@ static_sites:
   - name: soar-studio-site
     source_dir: public
     github:
-      repo: DATIAabmi/soar-studio
+      repo: soar-studio/Soar-Studio-Website-
       branch: main
       deploy_on_push: true
     output_dir: /
