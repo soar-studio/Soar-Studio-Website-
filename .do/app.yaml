@@ -1,5 +1,10 @@
 name: soar-studio
 region: nyc
+domains:
+  - domain: soar.studio
+    type: PRIMARY
+  - domain: www.soar.studio
+    type: ALIAS
 static_sites:
   - name: soar-studio-site
     source_dir: public
