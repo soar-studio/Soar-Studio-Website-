@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockSpot Documentation — SOAR</title>
+  <meta name="description" content="Everything you need to install, configure, and get the most out of StockSpot — SOAR's Shopify stock-alerts app." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html" class="brand" aria-label="SOAR home">
+        <img src="soar-logo.png" alt="SOAR" class="brand-logo" width="239" height="56" />
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#apps">Apps</a>
+        <a href="index.html#about">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="stockspot.html" class="btn btn-dark btn-sm">Install StockSpot <span class="arrow">→</span></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="docs-layout">
+        <aside class="docs-sidebar">
+          <div class="docs-sidebar-brand">
+            <div class="appicon appicon-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L22 7 L12 12 L2 7 Z"/><path d="M2 7 V17 L12 22 L22 17 V7"/><path d="M12 12 V22"/></svg>
+            </div>
+            <div>
+              <strong>StockSpot</strong>
+              <span>Docs</span>
+            </div>
+          </div>
+          <h4>Getting started</h4>
+          <ul>
+            <li><a href="#overview" class="active">Overview</a></li>
+            <li><a href="#install">Install</a></li>
+            <li><a href="#quickstart">Quickstart</a></li>
+          </ul>
+          <h4>Core concepts</h4>
+          <ul>
+            <li><a href="#thresholds">Thresholds</a></li>
+            <li><a href="#channels">Alert channels</a></li>
+            <li><a href="#rules">Rules &amp; filters</a></li>
+            <li><a href="#locations">Multi-location</a></li>
+          </ul>
+          <h4>Reference</h4>
+          <ul>
+            <li><a href="#webhooks">Webhooks</a></li>
+            <li><a href="#api">REST API</a></li>
+            <li><a href="#integrations">Integrations</a></li>
+          </ul>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#changelog">Changelog</a></li>
+            <li><a href="contact.html">Contact support</a></li>
+          </ul>
+        </aside>
+
+        <article class="docs-main">
+          <h1 id="overview">StockSpot Documentation</h1>
+          <p class="docs-lede">
+            StockSpot is a real-time inventory alert system for Shopify. This guide walks you through install, setup, and the core concepts you need to know.
+          </p>
+
+          <div class="callout">
+            <strong>New here?</strong> Jump straight to the <a href="#quickstart">quickstart</a> for a 5-minute setup, or <a href="stockspot.html">view the product page</a> for an overview.
+          </div>
+
+          <h2 id="install">Install</h2>
+          <p>StockSpot installs in one click from the Shopify App Store:</p>
+          <ol>
+            <li>Open your Shopify admin.</li>
+            <li>Navigate to <strong>Apps → Shopify App Store</strong>.</li>
+            <li>Search for <code>StockSpot by SOAR</code> and click <strong>Add app</strong>.</li>
+            <li>Approve the OAuth permissions when prompted. StockSpot requires read access to products, inventory, and locations.</li>
+            <li>You'll land on the StockSpot dashboard. Welcome!</li>
+          </ol>
+
+          <h2 id="quickstart">Quickstart</h2>
+          <p>Here's the fastest path from install to your first alert:</p>
+          <h3>1. Set your default threshold</h3>
+          <p>In the dashboard, click <strong>Settings → Default threshold</strong>. Enter the stock level you want alerts fired at. For most stores, <code>5</code> is a reasonable starting point.</p>
+          <pre><code>Default threshold: 5 units
+Scope: all tracked products
+Alert type: Low stock</code></pre>
+
+          <h3>2. Connect an alert channel</h3>
+          <p>Go to <strong>Alerts → Channels</strong>. Add at least one of:</p>
+          <ul>
+            <li><strong>Email</strong>: enter one or more email addresses</li>
+            <li><strong>Slack</strong>: connect your workspace via OAuth and pick a channel</li>
+            <li><strong>SMS</strong>: add phone numbers (Growth plan and up)</li>
+          </ul>
+
+          <h3>3. Pick products to track</h3>
+          <p>By default StockSpot tracks all products. To scope down, go to <strong>Products → Filters</strong> and set:</p>
+          <ul>
+            <li>Collections (e.g., only <code>Bestsellers</code>)</li>
+            <li>Product tags (e.g., only products tagged <code>priority</code>)</li>
+            <li>Vendors or product types</li>
+          </ul>
+
+          <div class="callout info">
+            <strong>Tip:</strong> StockSpot's smart defaults analyze your past 30 days of sales velocity and suggest thresholds per SKU. Click <strong>Suggest thresholds</strong> in the Settings page.
+          </div>
+
+          <h2 id="thresholds">Thresholds</h2>
+          <p>A threshold is the inventory level at which StockSpot fires an alert. StockSpot supports four kinds:</p>
+          <ul>
+            <li><strong>Global</strong>: one number for every tracked product.</li>
+            <li><strong>Per-product</strong>: override the global for a specific product.</li>
+            <li><strong>Per-variant</strong>: override the product-level for a specific SKU.</li>
+            <li><strong>Per-location</strong>: track stock separately for each Shopify location.</li>
+          </ul>
+          <p>More specific thresholds always win. If a variant has its own number, it uses that. Otherwise it falls back to the product level, then the global.</p>
+
+          <h2 id="channels">Alert channels</h2>
+          <p>StockSpot can deliver alerts via:</p>
+          <ul>
+            <li><strong>Email</strong> — all plans. HTML or plain-text format.</li>
+            <li><strong>Slack</strong> — all plans. Pick a channel, optionally thread by product.</li>
+            <li><strong>SMS</strong> — Growth and Plus. International numbers supported.</li>
+            <li><strong>Webhooks</strong> — Plus plan. Send a POST to any URL.</li>
+          </ul>
+          <p>You can route different products or thresholds to different channels using rules.</p>
+
+          <h2 id="rules">Rules &amp; filters</h2>
+          <p>Rules let you say "when this condition is true, send this alert to this channel." Example:</p>
+          <pre><code>Rule: "Bestsellers low stock to Slack ops"
+When: inventory &lt; 10 units
+Where: collection = "Bestsellers"
+Alert: #ops-stockouts in Slack
+Frequency: at most once per hour per SKU</code></pre>
+
+          <h2 id="locations">Multi-location</h2>
+          <p>If your Shopify store has multiple locations (warehouse, retail, 3PL), StockSpot tracks each independently. Options:</p>
+          <ul>
+            <li><strong>Per-location thresholds</strong>: alert when any single location dips.</li>
+            <li><strong>Rolled-up stock</strong>: sum across all locations and alert on the total.</li>
+            <li><strong>Location-specific channels</strong>: route alerts for your Toronto warehouse to one Slack channel, Austin to another.</li>
+          </ul>
+
+          <h2 id="webhooks">Webhooks</h2>
+          <p>On the Plus plan, every alert can POST to a URL you control. Payload shape:</p>
+          <pre><code>{
+  "event": "stockspot.alert.low_stock",
+  "created_at": "2026-10-28T14:00:00Z",
+  "shop": "yourstore.myshopify.com",
+  "product_id": 123456789,
+  "variant_id": 987654321,
+  "sku": "AF-001-32-TEAL",
+  "title": "AquaFlask Bottle 32oz / Teal",
+  "inventory": 2,
+  "threshold": 5,
+  "location_id": 1,
+  "location_name": "Main Warehouse"
+}</code></pre>
+
+          <h2 id="api">REST API</h2>
+          <p>Plus plan includes a REST API at <code>https://api.soar.studio/stockspot/v1</code>. Endpoints:</p>
+          <ul>
+            <li><code>GET /alerts</code> — list recent alerts</li>
+            <li><code>GET /thresholds</code> — list configured thresholds</li>
+            <li><code>POST /thresholds</code> — set a threshold</li>
+            <li><code>GET /products</code> — list tracked products</li>
+          </ul>
+          <p>Auth is via API key — generate one from <strong>Settings → API</strong>.</p>
+
+          <h2 id="integrations">Integrations</h2>
+          <p>StockSpot has native integrations with:</p>
+          <ul>
+            <li><strong>Slack</strong> — all plans</li>
+            <li><strong>Microsoft Teams</strong> — Growth and Plus</li>
+            <li><strong>Zapier</strong> — Plus (3,000+ app connections)</li>
+            <li><strong>Make.com</strong> — Plus</li>
+            <li><strong>Google Sheets</strong> — Growth and Plus (auto-export reports)</li>
+          </ul>
+
+          <h2 id="troubleshooting">Troubleshooting</h2>
+          <h3>I'm not getting alerts</h3>
+          <ol>
+            <li>Check <strong>Alerts → Delivery log</strong> to see if alerts were sent.</li>
+            <li>Verify the email didn't land in spam. Whitelist <code>alerts@soar.studio</code>.</li>
+            <li>Confirm the Slack integration is still authorized (reconnect under Channels).</li>
+            <li>Check thresholds — the inventory may actually be above your threshold.</li>
+          </ol>
+
+          <h3>Alerts fire too often</h3>
+          <p>Set a <strong>debounce window</strong> in Settings — StockSpot will send at most one alert per SKU per time window (default 1 hour).</p>
+
+          <div class="callout warn">
+            <strong>Still stuck?</strong> Email <a href="mailto:support@soar.studio">support@soar.studio</a> with your Shopify store URL and we'll look into it, usually same business day.
+          </div>
+
+          <h2 id="changelog">Changelog</h2>
+          <p><strong>v1.4</strong> — Multi-location rollup support, Google Sheets auto-export</p>
+          <p><strong>v1.3</strong> — Native Microsoft Teams integration, smart threshold suggestions</p>
+          <p><strong>v1.2</strong> — Webhook support, REST API (Plus plan)</p>
+          <p><strong>v1.1</strong> — SMS alerts, A/B threshold testing</p>
+          <p><strong>v1.0</strong> — Initial launch (email + Slack, global thresholds)</p>
+
+          <nav class="docs-footer-nav">
+            <a href="smartcart-docs.html">
+              <small>Next app</small>
+              <strong>SmartCart Docs →</strong>
+            </a>
+            <a href="contact.html">
+              <small>Need a hand?</small>
+              <strong>Contact support →</strong>
+            </a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-pitch">
+        <img src="soar-logo.png" alt="SOAR" class="footer-logo" width="307" height="72" />
+        <p class="footer-tagline">Shopify apps for ambitious brands.<br />Built with care in <span class="hl-lime">2026</span>.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Apps</h5>
+          <a href="stockspot.html">StockSpot</a>
+          <a href="smartcart.html">SmartCart</a>
+        </div>
+        <div class="footer-col">
+          <h5>Docs</h5>
+          <a href="stockspot-docs.html">StockSpot</a>
+          <a href="smartcart-docs.html">SmartCart</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html#about">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> SOAR Studio Inc. All rights reserved.</p>
+      <nav class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Highlight current anchor in sidebar
+    const sidebarLinks = document.querySelectorAll('.docs-sidebar a[href^="#"]');
+    const sections = document.querySelectorAll('.docs-main h2[id], .docs-main h1[id]');
+    function setActive() {
+      let current = sections[0]?.id;
+      sections.forEach(s => { if (s.getBoundingClientRect().top < 150) current = s.id; });
+      sidebarLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    }
+    document.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  </script>
+</body>
+</html>

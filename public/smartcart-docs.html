@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCart Documentation — SOAR</title>
+  <meta name="description" content="Install, configure, and extend SmartCart — SOAR's in-cart upsell app for Shopify." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html" class="brand" aria-label="SOAR home">
+        <img src="soar-logo.png" alt="SOAR" class="brand-logo" width="239" height="56" />
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#apps">Apps</a>
+        <a href="index.html#about">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="smartcart.html" class="btn btn-dark btn-sm">Install SmartCart <span class="arrow">→</span></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="docs-layout">
+        <aside class="docs-sidebar">
+          <div class="docs-sidebar-brand">
+            <div class="appicon appicon-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h12l2-9H6"/></svg>
+            </div>
+            <div>
+              <strong>SmartCart</strong>
+              <span>Docs</span>
+            </div>
+          </div>
+          <h4>Getting started</h4>
+          <ul>
+            <li><a href="#overview" class="active">Overview</a></li>
+            <li><a href="#install">Install</a></li>
+            <li><a href="#quickstart">Quickstart</a></li>
+          </ul>
+          <h4>Core features</h4>
+          <ul>
+            <li><a href="#upsells">Upsell rules</a></li>
+            <li><a href="#shipping">Free shipping bar</a></li>
+            <li><a href="#gifts">Gift with purchase</a></li>
+            <li><a href="#messaging">Cart messaging</a></li>
+          </ul>
+          <h4>Advanced</h4>
+          <ul>
+            <li><a href="#ab-testing">A/B testing</a></li>
+            <li><a href="#ai-recommendations">AI recommendations</a></li>
+            <li><a href="#checkout-extensions">Checkout extensions</a></li>
+            <li><a href="#styling">Custom styling</a></li>
+          </ul>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#changelog">Changelog</a></li>
+            <li><a href="contact.html">Contact support</a></li>
+          </ul>
+        </aside>
+
+        <article class="docs-main">
+          <h1 id="overview">SmartCart Documentation</h1>
+          <p class="docs-lede">
+            SmartCart is an in-cart upsell and conversion toolkit for Shopify. This guide covers install, configuration, and the advanced features that drive real AOV gains.
+          </p>
+
+          <div class="callout">
+            <strong>New here?</strong> Start with the <a href="#quickstart">quickstart</a> to go live in 5 minutes, or <a href="smartcart.html">view the product page</a> for a feature overview.
+          </div>
+
+          <h2 id="install">Install</h2>
+          <p>SmartCart ships as a Shopify Online Store 2.0 app with an embedded admin and a theme-level app block. To install:</p>
+          <ol>
+            <li>Open your Shopify admin.</li>
+            <li>Go to <strong>Apps → Shopify App Store</strong>.</li>
+            <li>Search for <code>SmartCart by SOAR</code> and click <strong>Add app</strong>.</li>
+            <li>Approve the OAuth permissions (read products, read/write cart, read orders).</li>
+            <li>In the SmartCart admin, click <strong>Enable in theme</strong> — this activates the app block in your live theme.</li>
+          </ol>
+
+          <div class="callout warn">
+            <strong>Note:</strong> On older themes (pre-Online Store 2.0), SmartCart falls back to a script-based install. Email <a href="mailto:support@soar.studio">support@soar.studio</a> for help if your theme doesn't support app blocks.
+          </div>
+
+          <h2 id="quickstart">Quickstart</h2>
+          <p>The fastest way to see SmartCart in action:</p>
+          <h3>1. Turn on the free shipping bar</h3>
+          <p>Go to <strong>Settings → Free shipping</strong>. Enter your shipping threshold (e.g., <code>$75</code>). SmartCart handles the rest — the progress bar appears automatically in your cart drawer.</p>
+
+          <h3>2. Add your first upsell rule</h3>
+          <p>Go to <strong>Rules → New rule</strong>. Pick a template:</p>
+          <ul>
+            <li><strong>Pair-together</strong>: when cart contains Product A, suggest Product B</li>
+            <li><strong>Bundle discount</strong>: 10% off when cart has both A and B</li>
+            <li><strong>AOV threshold</strong>: when cart total &gt; $X, offer upgrade</li>
+          </ul>
+
+          <h3>3. Preview and publish</h3>
+          <p>Click <strong>Preview</strong> to see the rule live on a test cart. When happy, hit <strong>Publish</strong>.</p>
+
+          <h2 id="upsells">Upsell rules</h2>
+          <p>Rules are the engine of SmartCart. Each rule has a <strong>trigger</strong>, a <strong>target</strong>, and an optional <strong>incentive</strong>.</p>
+          <pre><code>Rule: "Mug + Hat Pair"
+Trigger: cart contains "Insulated Mug"
+Target: suggest "Trail Hat"
+Incentive: 15% off bundle
+Position: below cart items
+Max display: once per session</code></pre>
+
+          <h3>Trigger types</h3>
+          <ul>
+            <li>Cart contains specific product / variant / SKU</li>
+            <li>Cart total above / below threshold</li>
+            <li>Cart item count &gt; X</li>
+            <li>Customer tag (e.g., only VIPs see this)</li>
+            <li>UTM / referrer source</li>
+          </ul>
+
+          <h2 id="shipping">Free shipping bar</h2>
+          <p>The free shipping progress bar shows customers how close they are to free shipping. Customization options:</p>
+          <ul>
+            <li><strong>Threshold</strong>: dollar amount for free shipping</li>
+            <li><strong>Progress color</strong>: inherits your theme accent by default</li>
+            <li><strong>Message templates</strong>: <code>You're $12 away from free shipping!</code> or custom</li>
+            <li><strong>Reward message</strong>: shown after threshold is hit — <code>🎉 You unlocked free shipping!</code></li>
+          </ul>
+
+          <h2 id="gifts">Gift with purchase</h2>
+          <p>Auto-add a free product to the cart when a condition is met.</p>
+          <pre><code>Gift rule: "Free sample pack over $50"
+Trigger: cart subtotal >= $50
+Add: Sample Pack (variant 123)
+Pricing: $0 (automatic 100% discount)
+Remove if: cart drops below $50</code></pre>
+
+          <h2 id="messaging">Cart messaging</h2>
+          <p>Show dynamic nudges in the cart based on state. Templates include:</p>
+          <ul>
+            <li><strong>Scarcity</strong>: <code>Only {inventory} left — order soon</code></li>
+            <li><strong>Shipping cutoff</strong>: <code>Order in {hours}h {minutes}m to ship today</code></li>
+            <li><strong>Returns reassurance</strong>: <code>Free returns within 30 days</code></li>
+            <li><strong>Trust badges</strong>: SSL / Shopify Secure Checkout logos</li>
+          </ul>
+
+          <h2 id="ab-testing">A/B testing</h2>
+          <p>Growth and Plus plans include built-in A/B testing. For any rule:</p>
+          <ol>
+            <li>Click <strong>Duplicate as variant</strong></li>
+            <li>Edit the variant (different copy, product, incentive)</li>
+            <li>Set traffic split (default 50/50)</li>
+            <li>SmartCart tracks conversion rate and incremental AOV per variant</li>
+            <li>After statistical significance is reached, click <strong>Promote winner</strong></li>
+          </ol>
+          <div class="callout info">
+            <strong>Tip:</strong> SmartCart uses sequential testing — you can call a winner as soon as significance is reached, no need to wait for a fixed sample size.
+          </div>
+
+          <h2 id="ai-recommendations">AI recommendations</h2>
+          <p>Plus plan unlocks AI-powered pair recommendations trained on your store's order history.</p>
+          <p>How it works:</p>
+          <ol>
+            <li>SmartCart analyzes 90 days of order data</li>
+            <li>Identifies products frequently bought together</li>
+            <li>Builds a product-pair model specific to your store</li>
+            <li>Serves recommendations in the cart drawer dynamically</li>
+          </ol>
+          <p>The model retrains weekly. You can also exclude specific SKUs from being recommended via <strong>Settings → AI exclusions</strong>.</p>
+
+          <h2 id="checkout-extensions">Checkout extensions</h2>
+          <p>Shopify Plus merchants on the Plus plan get native Checkout Extension support for post-purchase upsells.</p>
+          <pre><code>Flow:
+Customer completes checkout
+→ Thank-you page shows SmartCart upsell
+→ One-click add (no re-entering card)
+→ Updated receipt sent</code></pre>
+
+          <h2 id="styling">Custom styling</h2>
+          <p>SmartCart inherits your theme by default, but you can override:</p>
+          <pre><code>/* In SmartCart Settings → Advanced CSS */
+.sc-upsell-card {
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+}
+.sc-progress-bar {
+  background: linear-gradient(90deg, #dcf24a, #c7e033);
+}</code></pre>
+
+          <h2 id="troubleshooting">Troubleshooting</h2>
+          <h3>Upsells aren't showing</h3>
+          <ol>
+            <li>Verify the SmartCart app block is enabled in your theme (<strong>Online Store → Themes → Customize → App blocks</strong>).</li>
+            <li>Check the rule is published (not in draft).</li>
+            <li>Make sure the trigger condition actually matches your test cart.</li>
+            <li>Clear your browser's localStorage — SmartCart respects "max display per session".</li>
+          </ol>
+
+          <h3>Styles look off</h3>
+          <p>Check <strong>Settings → Theme compatibility</strong>. If your theme uses unusual CSS resets, enable <strong>Isolated styling mode</strong> and SmartCart will use its own CSS without inheriting the theme.</p>
+
+          <div class="callout warn">
+            <strong>Still stuck?</strong> Email <a href="mailto:support@soar.studio">support@soar.studio</a> with your store URL and we'll debug it — usually same business day.
+          </div>
+
+          <h2 id="changelog">Changelog</h2>
+          <p><strong>v2.1</strong> — AI recommendations (Plus), Checkout Extension support</p>
+          <p><strong>v2.0</strong> — Full rewrite on Online Store 2.0 app blocks, sequential A/B testing</p>
+          <p><strong>v1.4</strong> — Gift-with-purchase rules, scarcity messaging templates</p>
+          <p><strong>v1.3</strong> — Custom CSS editor, isolated styling mode</p>
+          <p><strong>v1.0</strong> — Initial launch (upsells + free shipping bar)</p>
+
+          <nav class="docs-footer-nav">
+            <a href="stockspot-docs.html">
+              <small>Other app</small>
+              <strong>StockSpot Docs →</strong>
+            </a>
+            <a href="contact.html">
+              <small>Need a hand?</small>
+              <strong>Contact support →</strong>
+            </a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-pitch">
+        <img src="soar-logo.png" alt="SOAR" class="footer-logo" width="307" height="72" />
+        <p class="footer-tagline">Shopify apps for ambitious brands.<br />Built with care in <span class="hl-lime">2026</span>.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Apps</h5>
+          <a href="stockspot.html">StockSpot</a>
+          <a href="smartcart.html">SmartCart</a>
+        </div>
+        <div class="footer-col">
+          <h5>Docs</h5>
+          <a href="stockspot-docs.html">StockSpot</a>
+          <a href="smartcart-docs.html">SmartCart</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html#about">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="footer-copy">&copy; <span id="year"></span> SOAR Studio Inc. All rights reserved.</p>
+      <nav class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const sidebarLinks = document.querySelectorAll('.docs-sidebar a[href^="#"]');
+    const sections = document.querySelectorAll('.docs-main h2[id], .docs-main h1[id]');
+    function setActive() {
+      let current = sections[0]?.id;
+      sections.forEach(s => { if (s.getBoundingClientRect().top < 150) current = s.id; });
+      sidebarLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    }
+    document.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  </script>
+</body>
+</html>
