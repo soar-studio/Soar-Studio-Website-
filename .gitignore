@@ -5,3 +5,5 @@ node_modules/
 *.log
 .env
 .env.local
+public/soar-logo-original.png
+public/soar-brand.png
