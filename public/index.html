@@ -3,282 +3,462 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SOAR — Shopify App Development Studio</title>
-  <meta name="description" content="SOAR is a Shopify app development studio. We design, build and ship apps that merchants trust — from discovery to Shopify App Store launch." />
-  <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="alternate icon" type="image/png" href="/soar-logo.png" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
-  <meta property="og:title" content="SOAR — Shopify App Development Studio" />
-  <meta property="og:description" content="We design, build and ship Shopify apps that merchants trust." />
-  <meta property="og:image" content="/soar-logo.png" />
+  <title>SOAR — Shopify Apps for Ambitious Brands</title>
+  <meta name="description" content="SOAR builds powerful Shopify apps like StockSpot and SmartCart to solve real merchant problems, save time, and increase revenue." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="soar-logo.png" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta property="og:title" content="SOAR — Shopify Apps for Ambitious Brands" />
+  <meta property="og:description" content="Less manual work. More sales. Powerful Shopify apps built for growing brands." />
+  <meta property="og:image" content="soar-logo.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://soar.studio" />
-  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-row">
-      <a href="/" class="brand" aria-label="SOAR home">
-        <img src="/soar-logo.png" alt="SOAR" class="brand-logo" />
+      <a href="#" class="brand" aria-label="SOAR home">
+        <img src="soar-logo.png" alt="SOAR" class="brand-logo" />
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a href="#work">Work</a>
-        <a href="#contact" class="nav-cta">Book a build call</a>
+        <a href="#apps">Apps</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
       </nav>
+      <a href="#apps" class="btn btn-dark btn-sm">Explore Our Apps <span class="arrow">→</span></a>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow">Shopify App Development Studio</p>
-        <img src="/soar-logo.png" alt="SOAR" class="hero-wordmark" />
-        <h1 class="hero-title">
-          Shopify apps that merchants<br />
-          <span class="accent-underline">install, keep, and pay for.</span>
-        </h1>
-        <p class="hero-lede">
-          We build the apps that top Shopify brands rely on every day — custom
-          builds, public App Store launches, and rescue missions on legacy code.
-          Senior engineers. Shipped in weeks, not quarters. Backed by a
-          money-where-our-mouth-is guarantee.
-        </p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary btn-lg">Book a free build call →</a>
-          <a href="#work" class="btn btn-ghost btn-lg">See recent work</a>
-        </div>
-        <p class="hero-microproof">Trusted by merchants on Shopify Plus · 2-week MVPs · 100% App Store approval rate</p>
-        <div class="hero-stats">
-          <div><strong class="stat-num">14 days</strong><span>From kickoff to installable MVP</span></div>
-          <div><strong class="stat-num">100%</strong><span>Shopify App Store approval rate</span></div>
-          <div><strong class="stat-num">$0 risk</strong><span>Fixed-scope, fixed-price builds</span></div>
-        </div>
+      <div class="hero-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
       </div>
-    </section>
-
-    <section class="logo-strip" aria-label="Trusted by">
-      <div class="container">
-        <p class="logo-strip-label">Shipping for merchants on</p>
-        <div class="logo-strip-row">
-          <span>SHOPIFY PLUS</span>
-          <span>HORIZON</span>
-          <span>HYDROGEN</span>
-          <span>POLARIS</span>
-          <span>REMIX</span>
-          <span>FUNCTIONS</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <p class="eyebrow">What we build</p>
-        <h2 class="section-title">Shopify apps that pay for themselves.</h2>
-        <p class="section-lede">Every build is scoped around one thing: measurable merchant ROI. Not vanity features. Not scope creep. Just apps that move revenue, retention or margin.</p>
-        <div class="grid grid-3">
-          <article class="card">
-            <div class="card-num">01</div>
-            <h3>Public App Store Launches</h3>
-            <p>Turn your idea into a public Shopify app with recurring revenue. We handle OAuth, billing, GDPR, webhooks, and review — so you launch in weeks and sleep at night.</p>
-            <p class="card-win">↗ Avg. 23 days from idea to App Store listing.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">02</div>
-            <h3>Custom Apps for Shopify Plus</h3>
-            <p>Private builds for merchants doing real volume — B2B portals, ERP bridges, custom checkouts, fulfillment flows. Replace $500/mo SaaS stacks you've outgrown.</p>
-            <p class="card-win">↗ Clients cut app-stack spend by 40%+.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">03</div>
-            <h3>Checkout &amp; Shopify Functions</h3>
-            <p>Custom discount logic, delivery &amp; payment customizations, and Functions that run at checkout speed. Lift AOV without hurting conversion.</p>
-            <p class="card-win">↗ 8–14% AOV lift on recent builds.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">04</div>
-            <h3>App Rescue &amp; Rebuild</h3>
-            <p>Inherit a broken app? Stuck in App Store review purgatory? We modernize legacy Node + REST to Remix + GraphQL and get you back shipping.</p>
-            <p class="card-win">↗ Avg. review rejection → approval in 2 weeks.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">05</div>
-            <h3>Theme &amp; Headless Storefronts</h3>
-            <p>Horizon, Dawn and Hydrogen builds that load fast and sell hard. App blocks and theme extensions that merchants can actually install themselves.</p>
-            <p class="card-win">↗ Core Web Vitals in the green on every build.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">06</div>
-            <h3>Fractional App Team</h3>
-            <p>Retainer engineering for app founders who need senior help without a 6-figure hire. Code reviews, roadmap, on-call for Shopify's quarterly releases.</p>
-            <p class="card-win">↗ From $4k/mo. Cancel anytime.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="approach" class="section section-alt">
-      <div class="container">
-        <p class="eyebrow">Approach</p>
-        <h2 class="section-title">A studio model. Not an agency.</h2>
-        <p class="section-lede">
-          Small teams. Senior engineers. Short feedback loops. We work the way
-          great product teams work — because the apps we build live inside
-          other people's businesses.
-        </p>
-        <div class="grid grid-4">
-          <div class="step">
-            <div class="step-num">1</div>
-            <h4>Discover</h4>
-            <p>Merchant interviews, Shopify API audit, scope and risk mapped.</p>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Shopify Apps for Ambitious Brands</p>
+          <h1 class="hero-title">
+            Less Manual Work.<br />
+            <span class="hl hl-purple">More Sales.</span>
+          </h1>
+          <p class="hero-lede">
+            We build powerful Shopify apps like <strong>StockSpot</strong> and
+            <strong>SmartCart</strong> to solve real merchant problems, save
+            time, and increase revenue.
+          </p>
+          <div class="hero-ctas">
+            <a href="#apps" class="btn btn-dark">Explore Our Apps <span class="arrow">→</span></a>
+            <a href="#" class="btn btn-light"><span class="play">▶</span> Watch Video</a>
           </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <h4>Design</h4>
-            <p>Polaris-native UX, embedded admin flows, storefront integration patterns.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <h4>Build</h4>
-            <p>Remix + TypeScript, GraphQL Admin API, tested, observable, review-ready.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <h4>Ship</h4>
-            <p>App Store submission, launch support, iteration against real merchant data.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="section">
-      <div class="container">
-        <p class="eyebrow">Work</p>
-        <h2 class="section-title">What we're building.</h2>
-        <div class="grid grid-2">
-          <article class="work-card">
-            <div class="work-tag">Public App</div>
-            <h3>Checkout Conversion Suite</h3>
-            <p>Shopify Functions-powered discounts, upsells and shipping logic for Plus merchants.</p>
-          </article>
-          <article class="work-card">
-            <div class="work-tag">Custom App</div>
-            <h3>Quote-to-Cart for B2B</h3>
-            <p>Replacing legacy quote forms with native Shopify draft orders, approval flows and PDF exports.</p>
-          </article>
-          <article class="work-card">
-            <div class="work-tag">Theme Extension</div>
-            <h3>Loyalty &amp; Rewards Block</h3>
-            <p>App block that renders in any Online Store 2.0 theme — Horizon, Dawn, or custom.</p>
-          </article>
-          <article class="work-card">
-            <div class="work-tag">Headless</div>
-            <h3>Hydrogen Storefront</h3>
-            <p>Edge-rendered storefronts on Oxygen with custom checkout extensions for enterprise brands.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-quote">
-      <div class="container">
-        <p class="eyebrow">Why merchants choose SOAR</p>
-        <figure class="quote">
-          <blockquote>
-            "We'd burned through two dev shops before SOAR. They shipped a working app in 11 days, got us through App Store review on the first try, and the thing has been generating MRR ever since. These guys actually ship."
-          </blockquote>
-          <figcaption>
-            <strong>Founder, Shopify App Partner</strong>
-            <span>7-figure ARR Shopify app, launched 2026</span>
-          </figcaption>
-        </figure>
-        <div class="guarantees">
-          <div class="guarantee">
-            <div class="guarantee-icon">✦</div>
-            <h4>Fixed price, fixed scope</h4>
-            <p>You know the number before we write a line of code. No surprise invoices. Ever.</p>
-          </div>
-          <div class="guarantee">
-            <div class="guarantee-icon">✦</div>
-            <h4>Senior engineers only</h4>
-            <p>Every line of code written by someone with 5+ years in the Shopify ecosystem. No juniors billed as seniors.</p>
-          </div>
-          <div class="guarantee">
-            <div class="guarantee-icon">✦</div>
-            <h4>Ship-or-refund guarantee</h4>
-            <p>If we miss the delivery date we committed to, you get the next sprint free. We've never had to invoke it.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-cta">
-      <svg class="cta-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <path d="M18 76 L50 24 L82 76" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div class="container">
-        <p class="cta-eyebrow">Only 2 build slots open this quarter</p>
-        <h2 class="cta-title">Your Shopify app is one call<br />away from shipping.</h2>
-        <p class="cta-lede">30 minutes. No slide decks. We'll scope your build, quote a fixed price, and tell you honestly if we're the right team — or who is.</p>
-        <a href="#contact" class="btn btn-primary btn-lg">Book your free build call →</a>
-        <p class="cta-micro">No credit card. No sales pitch. Just engineers.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container contact-grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2 class="section-title">Tell us what you're building.</h2>
-          <p class="section-lede">Share a few details and we'll come back within one business day with next steps — scope, timeline, and a senior engineer who'd lead the work.</p>
-          <ul class="contact-list">
-            <li><strong>Email</strong><a href="mailto:hello@soar.studio">hello@soar.studio</a></li>
-            <li><strong>Hours</strong><span>Mon–Fri · 9am–6pm ET</span></li>
+          <ul class="trust-row">
+            <li>
+              <span class="trust-icon">⚡</span>
+              <div><strong>Built for</strong><span>Performance</span></div>
+            </li>
+            <li>
+              <span class="trust-icon">🛍️</span>
+              <div><strong>Trusted by</strong><span>Shopify Merchants</span></div>
+            </li>
+            <li>
+              <span class="trust-icon">👥</span>
+              <div><strong>Real Support</strong><span>from Real People</span></div>
+            </li>
           </ul>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST" novalidate>
-          <label>
-            <span>Your name</span>
-            <input type="text" name="name" required autocomplete="name" />
-          </label>
-          <label>
-            <span>Work email</span>
-            <input type="email" name="email" required autocomplete="email" />
-          </label>
-          <label>
-            <span>Company / Shopify store</span>
-            <input type="text" name="company" autocomplete="organization" />
-          </label>
-          <label>
-            <span>What are you building?</span>
-            <textarea name="message" rows="4" required></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary btn-block">Send message</button>
-          <p class="form-note">By submitting, you agree to be contacted about your project.</p>
-        </form>
+        <div class="hero-mock">
+          <!-- StockSpot preview card -->
+          <article class="appcard appcard-a">
+            <header class="appcard-head">
+              <div class="appicon appicon-dark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L22 7 L12 12 L2 7 Z"/><path d="M2 7 V17 L12 22 L22 17 V7"/><path d="M12 12 V22"/></svg>
+              </div>
+              <div>
+                <h3>StockSpot</h3>
+                <p>Stock Alerts & Inventory Notifications</p>
+              </div>
+            </header>
+            <div class="appcard-row">
+              <div class="appcard-thumb">
+                <img src="https://images.unsplash.com/photo-1570466169093-7df8d19aba13?w=200&q=80" alt="" onerror="this.style.display='none'" />
+              </div>
+              <div class="appcard-info">
+                <strong>AquaFlask Bottle</strong>
+                <span>SKU: AF-001</span>
+              </div>
+              <span class="pill pill-danger">Low Stock</span>
+            </div>
+            <ul class="appcard-list">
+              <li>
+                <span class="appcard-bullet">🔔</span>
+                <div><strong>Low stock alerts</strong><em>Email, Slack, SMS</em></div>
+              </li>
+              <li>
+                <span class="appcard-bullet">⚙️</span>
+                <div><strong>Custom thresholds</strong><em>Per product or variant</em></div>
+              </li>
+              <li>
+                <span class="appcard-bullet">📊</span>
+                <div><strong>Out of stock reports</strong><em>Stay ahead of demand</em></div>
+              </li>
+              <li>
+                <span class="appcard-bullet">✓</span>
+                <div><strong>Easy setup</strong><em>No coding required</em></div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- SmartCart preview card -->
+          <article class="appcard appcard-b">
+            <header class="appcard-head">
+              <div class="appicon appicon-dark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h12l2-9H6"/></svg>
+              </div>
+              <div>
+                <h3>SmartCart</h3>
+                <p>In-Cart Upsells & Cart Tools</p>
+              </div>
+            </header>
+            <ul class="appcard-list">
+              <li>
+                <span class="appcard-bullet">↗</span>
+                <div><strong>Increase average order value</strong><em>In-cart upsells & cross-sells</em></div>
+              </li>
+              <li>
+                <span class="appcard-bullet">🚚</span>
+                <div><strong>Free shipping progress bar</strong><em>Drive higher cart value</em></div>
+              </li>
+              <li>
+                <span class="appcard-bullet">💬</span>
+                <div><strong>Custom messages & rules</strong><em>Tailored to your store</em></div>
+              </li>
+              <li>
+                <span class="appcard-bullet">📱</span>
+                <div><strong>Mobile optimized</strong><em>Fast and easy to use</em></div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPS SHOWCASE -->
+    <section id="apps" class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Our Shopify Apps</p>
+            <h2 class="section-title">Simple Apps. <span class="hl hl-purple">Real Results.</span></h2>
+          </div>
+          <a href="#" class="link-arrow">View All Apps <span class="arrow">→</span></a>
+        </div>
+        <div class="apps-grid">
+          <!-- StockSpot showcase -->
+          <article class="app-feature">
+            <div class="app-feature-copy">
+              <header class="appcard-head">
+                <div class="appicon appicon-dark">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L22 7 L12 12 L2 7 Z"/><path d="M2 7 V17 L12 22 L22 17 V7"/><path d="M12 12 V22"/></svg>
+                </div>
+                <div>
+                  <h3>StockSpot</h3>
+                  <p>Stock Alerts & Inventory Notifications</p>
+                </div>
+              </header>
+              <p class="app-feature-desc">Never miss a sale. Get notified before items run out and keep your best sellers in stock.</p>
+              <ul class="checklist">
+                <li>Low stock alerts (email, Slack, SMS)</li>
+                <li>Custom thresholds per product/variant</li>
+                <li>Out of stock reports</li>
+                <li>Easy setup, no coding</li>
+              </ul>
+              <div class="app-feature-ctas">
+                <a href="#" class="btn btn-lime">View StockSpot <span class="arrow">→</span></a>
+                <a href="#" class="btn btn-ghost">Learn More</a>
+              </div>
+            </div>
+            <div class="app-feature-mock mock-bottle">
+              <div class="mock-img">
+                <svg viewBox="0 0 120 180" aria-hidden="true"><rect x="40" y="10" width="40" height="20" rx="4" fill="#1a1a1a"/><path d="M30 40 Q30 32 40 32 L80 32 Q90 32 90 40 L92 160 Q92 170 82 170 L38 170 Q28 170 30 160 Z" fill="#4a7a8c"/><rect x="42" y="80" width="36" height="60" fill="rgba(255,255,255,0.08)"/></svg>
+                <span class="mock-badge">Low Stock<br /><em>2 left in stock</em></span>
+              </div>
+              <ul class="mock-channels">
+                <li><span>✉</span> Email</li>
+                <li><span>💬</span> Slack</li>
+                <li><span>📱</span> SMS</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SmartCart showcase -->
+          <article class="app-feature">
+            <div class="app-feature-copy">
+              <header class="appcard-head">
+                <div class="appicon appicon-dark">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h12l2-9H6"/></svg>
+                </div>
+                <div>
+                  <h3>SmartCart</h3>
+                  <p>In-Cart Upsells & Cart Tools</p>
+                </div>
+              </header>
+              <p class="app-feature-desc">Turn more carts into orders with powerful upsells, cross-sells, and cart tools.</p>
+              <ul class="checklist">
+                <li>In-cart upsells & cross-sells</li>
+                <li>Free shipping progress bar</li>
+                <li>Custom messages and rules</li>
+                <li>Mobile optimized & easy to use</li>
+              </ul>
+              <div class="app-feature-ctas">
+                <a href="#" class="btn btn-lime">View SmartCart <span class="arrow">→</span></a>
+                <a href="#" class="btn btn-ghost">Learn More</a>
+              </div>
+            </div>
+            <div class="app-feature-mock mock-cart">
+              <div class="cart-widget">
+                <header class="cart-head">
+                  <strong>Your Cart (2)</strong>
+                  <button aria-label="Close" class="cart-x">×</button>
+                </header>
+                <p class="cart-free">Add $20 to get free shipping</p>
+                <div class="cart-progress"><span style="width:62%"></span></div>
+                <ul class="cart-items">
+                  <li>
+                    <div class="cart-thumb">🧴</div>
+                    <div class="cart-item-info"><strong>Insulated Mug</strong><span>$34.00</span></div>
+                    <div class="qty">− 1 +</div>
+                  </li>
+                  <li>
+                    <div class="cart-thumb">🧢</div>
+                    <div class="cart-item-info"><strong>Trail Hat</strong><span>$42.00</span></div>
+                    <div class="qty">− 1 +</div>
+                  </li>
+                </ul>
+                <button class="cart-checkout">Checkout <span class="arrow">→</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats-row">
+        <div><strong>2+</strong><span>Shopify Apps</span></div>
+        <div><strong>5,000+</strong><span>Active Stores</span></div>
+        <div><strong>98%</strong><span>Positive Reviews</span></div>
+        <div><strong>24/7</strong><span>Support</span></div>
+      </div>
+    </section>
+
+    <!-- TOOLS / FEATURES -->
+    <section id="about" class="section section-grey">
+      <div class="container tools-grid">
+        <div class="tools-copy">
+          <p class="eyebrow">Built for Merchants</p>
+          <h2 class="section-title">Tools that<br />actually help<br />you <span class="hl hl-lime">grow.</span></h2>
+          <p class="section-lede">We focus on real problems that Shopify merchants face, and build simple, powerful tools to solve them.</p>
+          <a href="#" class="btn btn-ghost">Our Story <span class="arrow">→</span></a>
+        </div>
+        <div class="tools-features">
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h4>Solve Real Problems</h4>
+            <p>Apps built from merchant feedback.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⚙️</div>
+            <h4>Easy to Use</h4>
+            <p>Simple setup, no coding required.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📈</div>
+            <h4>Increase Revenue</h4>
+            <p>Proven to drive higher AOV and conversions.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h4>Mobile Optimized</h4>
+            <p>Works seamlessly on all devices.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧱</div>
+            <h4>Built for Shopify</h4>
+            <p>Follow best practices and Shopify standards.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🤝</div>
+            <h4>Real Support</h4>
+            <p>Get help from our team, not a bot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Case Studies</p>
+            <h2 class="section-title">Real Brands.<br />Real Growth.</h2>
+          </div>
+          <a href="#" class="link-arrow">View All Case Studies <span class="arrow">→</span></a>
+        </div>
+        <div class="cases-grid">
+          <article class="case">
+            <div class="case-img case-img-aqua"></div>
+            <p class="case-brand">AQUAFLASK</p>
+            <h3 class="case-stat">−27%</h3>
+            <p class="case-metric">Out of Stock Incidents</p>
+            <p class="case-desc">Used StockSpot to reduce stockouts and keep best sellers in stock.</p>
+            <a href="#" class="link-arrow link-sm">Read Case Study <span class="arrow">→</span></a>
+          </article>
+          <article class="case">
+            <div class="case-img case-img-yatta"></div>
+            <p class="case-brand">YATTA</p>
+            <h3 class="case-stat">+32%</h3>
+            <p class="case-metric">Average Order Value</p>
+            <p class="case-desc">Used SmartCart to add in-cart upsells and free shipping progress.</p>
+            <a href="#" class="link-arrow link-sm">Read Case Study <span class="arrow">→</span></a>
+          </article>
+          <article class="case">
+            <div class="case-img case-img-macklowe"></div>
+            <p class="case-brand">MACKLOWE GALLERY</p>
+            <h3 class="case-stat">+18%</h3>
+            <p class="case-metric">Conversion Rate</p>
+            <p class="case-desc">Used SmartCart to introduce cross-sells and custom cart rules.</p>
+            <a href="#" class="link-arrow link-sm">Read Case Study <span class="arrow">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section-grey">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">What Merchants Say</p>
+            <h2 class="section-title">Trusted by Growing Brands.</h2>
+          </div>
+          <div class="carousel-ctrls" aria-hidden="true">
+            <button aria-label="Previous">←</button>
+            <button aria-label="Next">→</button>
+          </div>
+        </div>
+        <div class="testimonials">
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <blockquote>"StockSpot has saved us so many lost sales. It's simple, reliable, and just works."</blockquote>
+            <footer>
+              <div class="t-avatar t-avatar-1">TA</div>
+              <div><strong>Terry Arsenault</strong><span>AquaFlask Canada</span></div>
+            </footer>
+          </article>
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <blockquote>"SmartCart helped us increase our AOV immediately. The setup was easy and the support is amazing."</blockquote>
+            <footer>
+              <div class="t-avatar t-avatar-2">SM</div>
+              <div><strong>Sarah Mitchell</strong><span>Yatta Life</span></div>
+            </footer>
+          </article>
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Exactly what we needed. Clean, powerful, and built for real stores."</blockquote>
+            <footer>
+              <div class="t-avatar t-avatar-3">JR</div>
+              <div><strong>James R.</strong><span>Macklowe Gallery</span></div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section-cta">
+      <div class="hero-bg hero-bg-cta">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-3"></div>
+      </div>
+      <div class="container cta-grid">
+        <div class="cta-copy">
+          <p class="eyebrow">Ready to Grow?</p>
+          <h2 class="cta-title">Install Our Apps and<br />Start <span class="hl hl-lime">Selling More.</span></h2>
+          <p class="cta-lede">Join thousands of Shopify merchants using SOAR apps to save time, reduce stockouts, and increase revenue.</p>
+          <div class="hero-ctas">
+            <a href="#apps" class="btn btn-dark">Explore Our Apps <span class="arrow">→</span></a>
+            <a href="#contact" class="btn btn-light">Get in Touch</a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <div class="shopping-bag" aria-hidden="true">
+            <div class="bag-handles"></div>
+            <div class="bag-body">
+              <span class="bag-s">S</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="/soar-logo.png" alt="SOAR" class="footer-logo" />
-        <p>Shopify App Development Studio</p>
+        <img src="soar-logo.png" alt="SOAR" class="footer-logo" />
+        <p>Shopify apps for ambitious brands.</p>
+        <div class="social">
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◉</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+      <div class="footer-col">
+        <h5>Apps</h5>
+        <a href="#">StockSpot</a>
+        <a href="#">SmartCart</a>
+        <a href="#">All Apps</a>
       </div>
-      <p class="footer-copy">&copy; <span id="year"></span> SOAR Studio. Shopify is a trademark of Shopify Inc.</p>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="#">Help Center</a>
+        <a href="#">Blog</a>
+        <a href="#">Shopify App Store</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#">About</a>
+        <a href="#">Case Studies</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col footer-signup">
+        <h5>Stay in the loop</h5>
+        <p>Get updates on new apps, features, and Shopify tips.</p>
+        <form class="signup" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓';">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> SOAR. All rights reserved.</p>
+      <nav class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </nav>
     </div>
   </footer>
 
