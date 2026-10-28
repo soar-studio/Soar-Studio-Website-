@@ -1,0 +1,16 @@
+name: soar-studio
+region: nyc
+static_sites:
+  - name: soar-studio-site
+    source_dir: public
+    github:
+      repo: YOUR_GH_USER/soar-studio
+      branch: main
+      deploy_on_push: true
+    output_dir: /
+    index_document: index.html
+    error_document: index.html
+    catchall_document: index.html
+    routes:
+      - path: /
+    envs: []
