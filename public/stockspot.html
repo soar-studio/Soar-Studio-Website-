@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StockSpot — Stock Alerts & Inventory Notifications for Shopify</title>
-  <meta name="description" content="Never miss a sale again. StockSpot sends real-time stock alerts to email, Slack, and SMS so you refill before you run out." />
+  <title>StockSpot — Find Products, Any Store. Pickup, Delivery & Transfer.</title>
+  <meta name="description" content="StockSpot shows your Shopify customers exactly where to find your products — pickup from the nearest store, local delivery, or store-to-store transfer. Real-time inventory across every location." />
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="alternate icon" type="image/png" href="soar-logo.png" />
@@ -40,13 +40,13 @@
         <div>
           <div class="app-hero-badge">
             <div class="appicon appicon-dark">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L22 7 L12 12 L2 7 Z"/><path d="M2 7 V17 L12 22 L22 17 V7"/><path d="M12 12 V22"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
             </div>
-            <span>StockSpot · Inventory Alerts</span>
+            <span>StockSpot · Store Locator & Fulfillment</span>
           </div>
-          <h1 class="app-hero-title">Never miss a sale from a <span class="hl hl-purple">stockout</span> again.</h1>
+          <h1 class="app-hero-title">Find any product. <span class="hl hl-purple">Any store.</span></h1>
           <p class="app-hero-sub">
-            StockSpot watches your Shopify inventory 24/7 and alerts your team the moment stock dips below your thresholds — via email, Slack, or SMS. Refill before customers notice.
+            StockSpot shows customers exactly where your products are — pick up from the nearest store, get it delivered locally, or request a transfer from another location. Live inventory across every store, right on your Shopify product page.
           </p>
           <div class="app-hero-ctas">
             <a href="#install" class="btn btn-dark btn-lg">Install on Shopify <span class="arrow">→</span></a>
@@ -55,49 +55,70 @@
           <div class="app-hero-meta">
             <span><strong>7-day</strong> free trial</span>
             <span>•</span>
-            <span>No credit card required</span>
+            <span>No code required</span>
             <span>•</span>
-            <span>Install in <strong>under 2 min</strong></span>
+            <span>Live in <strong>under 10 min</strong></span>
           </div>
         </div>
+
+        <!-- Store locator mock -->
         <div class="app-hero-mock">
           <header class="appcard-head">
             <div class="appicon appicon-dark">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L22 7 L12 12 L2 7 Z"/><path d="M2 7 V17 L12 22 L22 17 V7"/><path d="M12 12 V22"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
             </div>
             <div>
-              <h3>StockSpot</h3>
-              <p>Stock Alerts & Inventory Notifications</p>
+              <h3>Find in-store</h3>
+              <p>Trail Rider 29" Mountain Bike</p>
             </div>
           </header>
-          <div class="appcard-row">
-            <div class="appcard-thumb">
-              <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="12" y="4" width="12" height="4" rx="1" fill="#1a1a1a"/><path d="M9 12 Q9 10 11 10 L25 10 Q27 10 27 12 L28 30 Q28 32 26 32 L10 32 Q8 32 9 30 Z" fill="#5a8a9c"/></svg>
-            </div>
-            <div class="appcard-info">
-              <strong>AquaFlask Bottle 32oz</strong>
-              <span>SKU: AF-001-32-TEAL</span>
-            </div>
-            <span class="pill pill-danger">Low Stock</span>
+
+          <div class="locator-input">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+            <span>M5V 2H1 · Toronto</span>
+            <button type="button">Change</button>
           </div>
-          <ul class="appcard-list">
+
+          <ul class="locator-list">
             <li>
-              <span class="appcard-bullet">🔔</span>
-              <div><strong>Low stock alerts</strong><em>Email, Slack, SMS</em></div>
+              <div class="loc-pin loc-pin-green">●</div>
+              <div class="loc-info">
+                <strong>Downtown Store</strong>
+                <span>King St W · 1.2 km</span>
+              </div>
+              <div class="loc-status loc-ok">
+                <strong>In stock</strong>
+                <small>3 available · Pickup today</small>
+              </div>
             </li>
             <li>
-              <span class="appcard-bullet">⚙️</span>
-              <div><strong>Custom thresholds</strong><em>Per product, variant, or location</em></div>
+              <div class="loc-pin loc-pin-yellow">●</div>
+              <div class="loc-info">
+                <strong>North Store</strong>
+                <span>Yonge St · 6.4 km</span>
+              </div>
+              <div class="loc-status loc-low">
+                <strong>Low stock</strong>
+                <small>1 available · Pickup today</small>
+              </div>
             </li>
             <li>
-              <span class="appcard-bullet">📊</span>
-              <div><strong>Out-of-stock reports</strong><em>Spot patterns before they hurt sales</em></div>
-            </li>
-            <li>
-              <span class="appcard-bullet">✓</span>
-              <div><strong>Easy setup</strong><em>Install, connect, done — no code</em></div>
+              <div class="loc-pin loc-pin-grey">●</div>
+              <div class="loc-info">
+                <strong>Westside</strong>
+                <span>Bloor St W · 8.1 km</span>
+              </div>
+              <div class="loc-status loc-transfer">
+                <strong>Transfer</strong>
+                <small>Available in 2 days</small>
+              </div>
             </li>
           </ul>
+
+          <div class="locator-actions">
+            <button class="btn btn-dark btn-sm">Pick up at Downtown <span class="arrow">→</span></button>
+            <button class="btn btn-ghost btn-sm">Local delivery</button>
+          </div>
         </div>
       </div>
     </section>
@@ -105,38 +126,38 @@
     <section class="section section-light">
       <div class="container">
         <p class="eyebrow">Why StockSpot</p>
-        <h2 class="section-title">The last stockout <span class="hl hl-purple">you'll ever have.</span></h2>
-        <p class="section-lede">Shopify's default low-stock view is static. StockSpot is active — it watches, reports, and nudges you so you never find out from a customer that something's out.</p>
+        <h2 class="section-title">Every store. Every SKU. <span class="hl hl-purple">One widget.</span></h2>
+        <p class="section-lede">Shopify's default product page assumes one location. StockSpot turns it into a real multi-location fulfillment experience — customers see what's where, pick how they want it, and buy on the spot.</p>
         <div class="feature-list">
           <article class="feature-item">
-            <div class="feature-icon">⚡</div>
-            <h3>Real-time inventory sync</h3>
-            <p>StockSpot syncs with Shopify's inventory API in real time. The second stock changes, your rules fire.</p>
+            <div class="feature-icon">📍</div>
+            <h3>Live store availability</h3>
+            <p>Real-time inventory from every Shopify location. Customers see what's in stock before they drive, call, or abandon the cart.</p>
           </article>
           <article class="feature-item">
-            <div class="feature-icon">📩</div>
-            <h3>Email, Slack & SMS alerts</h3>
-            <p>Pick the channel your team actually watches. Pipe alerts to Slack channels, text your warehouse lead, or email the whole ops team.</p>
+            <div class="feature-icon">🛍️</div>
+            <h3>Click &amp; collect</h3>
+            <p>Pick up today from the nearest store. StockSpot creates the order, reserves the stock, and emails the pickup instructions.</p>
           </article>
           <article class="feature-item">
-            <div class="feature-icon">🎯</div>
-            <h3>Thresholds that fit your reality</h3>
-            <p>Not every SKU is equal. Set different thresholds for your bestsellers vs. long-tail products, down to the variant and location level.</p>
+            <div class="feature-icon">🚚</div>
+            <h3>Local delivery</h3>
+            <p>Set delivery zones per store. Customers in-zone get a same-day or next-day option, routed from the closest location that has stock.</p>
           </article>
           <article class="feature-item">
-            <div class="feature-icon">📈</div>
-            <h3>Stockout reports</h3>
-            <p>See which products ran out, when, and for how long. Export to CSV and feed it to your purchasing team.</p>
+            <div class="feature-icon">🔁</div>
+            <h3>Store-to-store transfers</h3>
+            <p>Out at the nearest store but in stock elsewhere? Request a transfer. StockSpot tracks the ETA and notifies the customer when it arrives.</p>
           </article>
           <article class="feature-item">
-            <div class="feature-icon">🏷️</div>
-            <h3>Tag &amp; filter by collection</h3>
-            <p>Only alert on products that matter. Filter by collection, product tag, vendor, or product type.</p>
+            <div class="feature-icon">🧭</div>
+            <h3>Smart distance sorting</h3>
+            <p>Postcode, GPS, or map-based lookup. Stores sort by proximity — the ones with stock bubble up first.</p>
           </article>
           <article class="feature-item">
-            <div class="feature-icon">🔐</div>
-            <h3>Shopify-grade security</h3>
-            <p>OAuth-based, GDPR compliant, SOC-ready. Your inventory data never leaves our encrypted infrastructure.</p>
+            <div class="feature-icon">🎨</div>
+            <h3>Theme-native widget</h3>
+            <p>Online Store 2.0 app block drops onto any product page in one click. Inherits your theme's fonts, colors, and buttons.</p>
           </article>
         </div>
       </div>
@@ -145,27 +166,27 @@
     <section class="section section-grey">
       <div class="container">
         <p class="eyebrow">How it works</p>
-        <h2 class="section-title">Set up in under 2 minutes.</h2>
+        <h2 class="section-title">Live on your store in 10 minutes.</h2>
         <div class="how-steps">
           <div class="how-step">
             <div class="how-step-num">1</div>
             <h4>Install from the App Store</h4>
-            <p>One-click install from the Shopify App Store. OAuth connects StockSpot to your inventory instantly.</p>
+            <p>One-click install. StockSpot pulls in your Shopify locations and inventory automatically.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">2</div>
-            <h4>Set your thresholds</h4>
-            <p>Pick a global threshold or dial in per-product rules. Use smart defaults based on past 30 days of sales velocity.</p>
+            <h4>Configure your stores</h4>
+            <p>Add store hours, phone numbers, delivery zones, and transfer times — all per location.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">3</div>
-            <h4>Connect your channels</h4>
-            <p>Add the emails, Slack workspace, and phone numbers you want alerts sent to. One channel or all three.</p>
+            <h4>Drop the widget on PDPs</h4>
+            <p>Enable the StockSpot app block in your theme. Shows up under the "Add to cart" button automatically.</p>
           </div>
           <div class="how-step">
             <div class="how-step-num">4</div>
-            <h4>Sleep better</h4>
-            <p>StockSpot runs in the background 24/7. You hear from us only when you need to act.</p>
+            <h4>Customers find and buy</h4>
+            <p>Enter postcode, see availability, pick pickup / delivery / transfer, check out — all without leaving the product page.</p>
           </div>
         </div>
       </div>
@@ -179,13 +200,13 @@
         <div class="pricing-grid">
           <div class="price-card">
             <h3 class="price-name">Starter</h3>
-            <div class="price-amount">$9<small>/mo</small></div>
-            <p class="price-tag">For small stores getting started</p>
+            <div class="price-amount">$19<small>/mo</small></div>
+            <p class="price-tag">For single-store setups</p>
             <ul class="price-features">
-              <li>Up to 100 SKUs tracked</li>
-              <li>Email alerts</li>
-              <li>Global threshold rules</li>
-              <li>Weekly stockout report</li>
+              <li>Up to 2 store locations</li>
+              <li>Live inventory widget</li>
+              <li>Click &amp; collect fulfillment</li>
+              <li>Postcode-based lookup</li>
               <li>Standard support</li>
             </ul>
             <a href="#" class="btn btn-ghost btn-block">Start free trial</a>
@@ -193,28 +214,28 @@
           <div class="price-card featured">
             <span class="price-badge">Most Popular</span>
             <h3 class="price-name">Growth</h3>
-            <div class="price-amount">$29<small>/mo</small></div>
-            <p class="price-tag">For scaling Shopify brands</p>
+            <div class="price-amount">$49<small>/mo</small></div>
+            <p class="price-tag">For multi-store brands</p>
             <ul class="price-features">
-              <li>Up to 2,500 SKUs tracked</li>
-              <li>Email + Slack + SMS alerts</li>
-              <li>Per-product &amp; variant rules</li>
-              <li>Real-time stockout reports</li>
-              <li>Multi-location support</li>
+              <li>Up to 25 locations</li>
+              <li>Pickup, delivery &amp; transfer</li>
+              <li>Delivery zone management</li>
+              <li>Map-based store finder</li>
+              <li>Transfer tracking &amp; ETAs</li>
               <li>Priority support</li>
             </ul>
             <a href="#" class="btn btn-dark btn-block">Start free trial</a>
           </div>
           <div class="price-card">
             <h3 class="price-name">Plus</h3>
-            <div class="price-amount">$79<small>/mo</small></div>
-            <p class="price-tag">For high-volume stores</p>
+            <div class="price-amount">$129<small>/mo</small></div>
+            <p class="price-tag">For large chains &amp; Plus merchants</p>
             <ul class="price-features">
-              <li>Unlimited SKUs</li>
-              <li>All alert channels + webhooks</li>
-              <li>Custom integrations (Zapier, Make)</li>
-              <li>CSV &amp; API data exports</li>
-              <li>Dedicated account manager</li>
+              <li>Unlimited locations</li>
+              <li>Custom fulfillment rules</li>
+              <li>POS integration</li>
+              <li>REST API &amp; webhooks</li>
+              <li>Dedicated success manager</li>
               <li>99.9% uptime SLA</li>
             </ul>
             <a href="#" class="btn btn-ghost btn-block">Start free trial</a>
@@ -229,28 +250,28 @@
         <h2 class="section-title">Questions about StockSpot?</h2>
         <div class="faq-grid">
           <article class="faq">
-            <h3>How fast are alerts?</h3>
-            <p>StockSpot listens to Shopify inventory webhooks — alerts typically fire within 30 seconds of a stock change.</p>
+            <h3>Does it work with multiple Shopify locations?</h3>
+            <p>Yes — that's the whole point. StockSpot syncs with every location you have in Shopify (POS or otherwise) and shows live inventory per store.</p>
           </article>
           <article class="faq">
-            <h3>Does it work with multiple locations?</h3>
-            <p>Yes. Set per-location thresholds or roll up stock across all locations. Growth and Plus plans support multi-location natively.</p>
+            <h3>How does click &amp; collect work?</h3>
+            <p>Customer picks a store, checks out normally. The order is tagged for pickup, inventory reserved at that location, and the customer gets an email with pickup instructions and store hours.</p>
           </article>
           <article class="faq">
-            <h3>Will it slow down my store?</h3>
-            <p>No. StockSpot runs entirely in the admin — no theme code or storefront injections. Zero impact on page speed.</p>
+            <h3>Can I offer local delivery too?</h3>
+            <p>Yes. Define delivery zones per store (by postal/zip code or radius). Customers in-zone see a "Local delivery" option alongside pickup.</p>
           </article>
           <article class="faq">
-            <h3>Can I filter which products get alerts?</h3>
-            <p>Yes — filter by collection, tag, vendor, product type, or specific SKUs. Only hear about products that matter.</p>
+            <h3>What happens if the nearest store is out of stock?</h3>
+            <p>StockSpot shows which <em>other</em> stores have it, and offers a "Transfer to my local" option if the merchant has transfers enabled. ETA is calculated from your transfer settings.</p>
           </article>
           <article class="faq">
-            <h3>Is there an API?</h3>
-            <p>Plus plan includes a REST API, webhooks, and native Zapier/Make integrations. Full docs on the <a href="stockspot-docs.html">docs page</a>.</p>
+            <h3>Will it slow down my product page?</h3>
+            <p>No. The widget loads async in under 15kb, pulls inventory from a cached edge, and never blocks Shopify's buy button. Zero Lighthouse impact.</p>
           </article>
           <article class="faq">
-            <h3>What if I need help?</h3>
-            <p>Email <a href="mailto:support@soar.studio">support@soar.studio</a> — real humans, same-day replies during ET business hours.</p>
+            <h3>Do you integrate with Shopify POS?</h3>
+            <p>Yes — Plus plan. Transfer requests flow into POS as pick lists; completed pickups mark the order fulfilled automatically.</p>
           </article>
         </div>
       </div>
@@ -264,8 +285,8 @@
       <div class="container cta-grid">
         <div class="cta-copy">
           <p class="eyebrow">Ready to install?</p>
-          <h2 class="cta-title">Catch every stockout.<br />Keep every <span class="hl hl-lime">sale.</span></h2>
-          <p class="cta-lede">Install StockSpot on your Shopify store and set up your first alert in under two minutes.</p>
+          <h2 class="cta-title">Turn your stores into a<br />fulfillment <span class="hl hl-lime">network.</span></h2>
+          <p class="cta-lede">Install StockSpot and give every customer the easiest path to buy — from whichever store makes sense.</p>
           <div class="hero-ctas">
             <a href="#" class="btn btn-dark">Install on Shopify <span class="arrow">→</span></a>
             <a href="stockspot-docs.html" class="btn btn-light">Read the docs</a>
@@ -281,7 +302,7 @@
     </section>
   </main>
 
-  <footer id="contact-footer" class="site-footer">
+  <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-pitch">
         <img src="soar-logo.png" alt="SOAR" class="footer-logo" width="307" height="72" />

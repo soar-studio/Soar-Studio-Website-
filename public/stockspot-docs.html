@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StockSpot Documentation — SOAR</title>
-  <meta name="description" content="Everything you need to install, configure, and get the most out of StockSpot — SOAR's Shopify stock-alerts app." />
+  <meta name="description" content="Install and configure StockSpot — SOAR's Shopify store locator & multi-location fulfillment app. Pickup, delivery, and transfers." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,7 +32,7 @@
         <aside class="docs-sidebar">
           <div class="docs-sidebar-brand">
             <div class="appicon appicon-dark">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L22 7 L12 12 L2 7 Z"/><path d="M2 7 V17 L12 22 L22 17 V7"/><path d="M12 12 V22"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
             </div>
             <div>
               <strong>StockSpot</strong>
@@ -45,18 +45,23 @@
             <li><a href="#install">Install</a></li>
             <li><a href="#quickstart">Quickstart</a></li>
           </ul>
-          <h4>Core concepts</h4>
+          <h4>Setup</h4>
           <ul>
-            <li><a href="#thresholds">Thresholds</a></li>
-            <li><a href="#channels">Alert channels</a></li>
-            <li><a href="#rules">Rules &amp; filters</a></li>
-            <li><a href="#locations">Multi-location</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#widget">Theme widget</a></li>
+            <li><a href="#inventory">Live inventory</a></li>
+          </ul>
+          <h4>Fulfillment</h4>
+          <ul>
+            <li><a href="#pickup">Click &amp; collect</a></li>
+            <li><a href="#delivery">Local delivery</a></li>
+            <li><a href="#transfers">Store transfers</a></li>
+            <li><a href="#pos">POS integration</a></li>
           </ul>
           <h4>Reference</h4>
           <ul>
-            <li><a href="#webhooks">Webhooks</a></li>
             <li><a href="#api">REST API</a></li>
-            <li><a href="#integrations">Integrations</a></li>
+            <li><a href="#webhooks">Webhooks</a></li>
           </ul>
           <h4>Support</h4>
           <ul>
@@ -69,11 +74,11 @@
         <article class="docs-main">
           <h1 id="overview">StockSpot Documentation</h1>
           <p class="docs-lede">
-            StockSpot is a real-time inventory alert system for Shopify. This guide walks you through install, setup, and the core concepts you need to know.
+            StockSpot is a store-locator and multi-location fulfillment app for Shopify. It shows customers which of your stores has a product, lets them pick pickup / delivery / transfer, and routes the order to the right location — all from the product page.
           </p>
 
           <div class="callout">
-            <strong>New here?</strong> Jump straight to the <a href="#quickstart">quickstart</a> for a 5-minute setup, or <a href="stockspot.html">view the product page</a> for an overview.
+            <strong>New here?</strong> Jump to the <a href="#quickstart">quickstart</a> for a 10-minute setup, or <a href="stockspot.html">view the product page</a> for an overview.
           </div>
 
           <h2 id="install">Install</h2>
@@ -82,132 +87,135 @@
             <li>Open your Shopify admin.</li>
             <li>Navigate to <strong>Apps → Shopify App Store</strong>.</li>
             <li>Search for <code>StockSpot by SOAR</code> and click <strong>Add app</strong>.</li>
-            <li>Approve the OAuth permissions when prompted. StockSpot requires read access to products, inventory, and locations.</li>
-            <li>You'll land on the StockSpot dashboard. Welcome!</li>
+            <li>Approve the OAuth permissions. StockSpot needs read access to products, inventory, locations, and orders — and write access to tag orders by fulfillment type.</li>
+            <li>You'll land on the StockSpot dashboard. Your Shopify locations are already synced.</li>
           </ol>
 
           <h2 id="quickstart">Quickstart</h2>
-          <p>Here's the fastest path from install to your first alert:</p>
-          <h3>1. Set your default threshold</h3>
-          <p>In the dashboard, click <strong>Settings → Default threshold</strong>. Enter the stock level you want alerts fired at. For most stores, <code>5</code> is a reasonable starting point.</p>
-          <pre><code>Default threshold: 5 units
-Scope: all tracked products
-Alert type: Low stock</code></pre>
+          <p>The fastest path from install to live widget:</p>
+          <h3>1. Review your locations</h3>
+          <p>Go to <strong>Locations</strong>. StockSpot pulled every Shopify location — confirm hours, address, phone, and whether each store accepts pickup / delivery / transfers.</p>
 
-          <h3>2. Connect an alert channel</h3>
-          <p>Go to <strong>Alerts → Channels</strong>. Add at least one of:</p>
-          <ul>
-            <li><strong>Email</strong>: enter one or more email addresses</li>
-            <li><strong>Slack</strong>: connect your workspace via OAuth and pick a channel</li>
-            <li><strong>SMS</strong>: add phone numbers (Growth plan and up)</li>
-          </ul>
+          <h3>2. Enable the theme widget</h3>
+          <p>Open your Shopify theme editor → <strong>Product page → Add block → StockSpot: Store availability</strong>. Drop it under the Add-to-Cart button.</p>
+          <pre><code>Theme → Customize → Product
+→ Add block → StockSpot: Store availability
+→ Save</code></pre>
 
-          <h3>3. Pick products to track</h3>
-          <p>By default StockSpot tracks all products. To scope down, go to <strong>Products → Filters</strong> and set:</p>
-          <ul>
-            <li>Collections (e.g., only <code>Bestsellers</code>)</li>
-            <li>Product tags (e.g., only products tagged <code>priority</code>)</li>
-            <li>Vendors or product types</li>
-          </ul>
+          <h3>3. Test it live</h3>
+          <p>Visit any product page on your storefront, enter a postcode, and the widget will show which locations have the product and the available fulfillment options.</p>
 
           <div class="callout info">
-            <strong>Tip:</strong> StockSpot's smart defaults analyze your past 30 days of sales velocity and suggest thresholds per SKU. Click <strong>Suggest thresholds</strong> in the Settings page.
+            <strong>Tip:</strong> Preview the widget first in a draft/duplicate theme before enabling on your live store.
           </div>
 
-          <h2 id="thresholds">Thresholds</h2>
-          <p>A threshold is the inventory level at which StockSpot fires an alert. StockSpot supports four kinds:</p>
+          <h2 id="locations">Locations</h2>
+          <p>Each location you have in Shopify (POS, warehouse, 3PL) can be independently configured in StockSpot. For every location set:</p>
           <ul>
-            <li><strong>Global</strong>: one number for every tracked product.</li>
-            <li><strong>Per-product</strong>: override the global for a specific product.</li>
-            <li><strong>Per-variant</strong>: override the product-level for a specific SKU.</li>
-            <li><strong>Per-location</strong>: track stock separately for each Shopify location.</li>
+            <li><strong>Display name</strong> (what customers see on the widget)</li>
+            <li><strong>Address, map coordinates, phone</strong></li>
+            <li><strong>Store hours</strong> (per weekday)</li>
+            <li><strong>Fulfillment types enabled</strong>: pickup / delivery / transfer-from</li>
+            <li><strong>Lead times</strong>: how long until pickup is ready, how long for transfers</li>
+            <li><strong>Public/hidden</strong>: hide warehouse-only locations from the finder</li>
           </ul>
-          <p>More specific thresholds always win. If a variant has its own number, it uses that. Otherwise it falls back to the product level, then the global.</p>
 
-          <h2 id="channels">Alert channels</h2>
-          <p>StockSpot can deliver alerts via:</p>
+          <h2 id="widget">Theme widget</h2>
+          <p>The storefront widget is a Shopify Online Store 2.0 app block. Options you can set in the theme editor:</p>
           <ul>
-            <li><strong>Email</strong> — all plans. HTML or plain-text format.</li>
-            <li><strong>Slack</strong> — all plans. Pick a channel, optionally thread by product.</li>
-            <li><strong>SMS</strong> — Growth and Plus. International numbers supported.</li>
-            <li><strong>Webhooks</strong> — Plus plan. Send a POST to any URL.</li>
+            <li><strong>Position</strong>: inline on PDP, modal on click, or sidebar drawer</li>
+            <li><strong>Lookup method</strong>: postcode, geolocation, or map pin-drop</li>
+            <li><strong>Max locations shown</strong>: default 5</li>
+            <li><strong>Default radius</strong>: 25 km / 15 mi</li>
+            <li><strong>Fallback</strong>: what to show if no in-stock location in range</li>
           </ul>
-          <p>You can route different products or thresholds to different channels using rules.</p>
 
-          <h2 id="rules">Rules &amp; filters</h2>
-          <p>Rules let you say "when this condition is true, send this alert to this channel." Example:</p>
-          <pre><code>Rule: "Bestsellers low stock to Slack ops"
-When: inventory &lt; 10 units
-Where: collection = "Bestsellers"
-Alert: #ops-stockouts in Slack
-Frequency: at most once per hour per SKU</code></pre>
-
-          <h2 id="locations">Multi-location</h2>
-          <p>If your Shopify store has multiple locations (warehouse, retail, 3PL), StockSpot tracks each independently. Options:</p>
+          <h2 id="inventory">Live inventory</h2>
+          <p>StockSpot reads inventory in real-time via Shopify's Inventory API. There's no sync delay — the moment stock changes in Shopify, the widget reflects it.</p>
+          <p>Supported inventory states:</p>
           <ul>
-            <li><strong>Per-location thresholds</strong>: alert when any single location dips.</li>
-            <li><strong>Rolled-up stock</strong>: sum across all locations and alert on the total.</li>
-            <li><strong>Location-specific channels</strong>: route alerts for your Toronto warehouse to one Slack channel, Austin to another.</li>
+            <li><strong>In stock</strong> (available &gt; threshold)</li>
+            <li><strong>Low stock</strong> (available &gt; 0 but ≤ threshold — threshold is per-product configurable)</li>
+            <li><strong>Out of stock</strong> (available = 0 — shows transfer option if enabled)</li>
+          </ul>
+
+          <h2 id="pickup">Click &amp; collect</h2>
+          <p>When a customer picks "Pick up at this store":</p>
+          <ol>
+            <li>Checkout runs normally (no shipping charge, pickup address auto-filled).</li>
+            <li>Order is created and <strong>tagged <code>stockspot-pickup</code></strong> plus the location handle.</li>
+            <li>Inventory is <strong>reserved</strong> at the chosen location.</li>
+            <li>Customer gets a pickup-ready email with store hours, address, and a pickup PIN.</li>
+          </ol>
+          <p>Store staff can mark the order picked up from Shopify admin or POS — this fulfills the order and releases the inventory reservation.</p>
+
+          <h2 id="delivery">Local delivery</h2>
+          <p>Local delivery lets you fulfill orders from a specific store for customers in a defined zone.</p>
+          <p>Define zones per location:</p>
+          <ul>
+            <li>By postal/zip code list</li>
+            <li>By radius (e.g., 10 km around the store address)</li>
+            <li>By custom polygon drawn on a map</li>
+          </ul>
+          <p>Customers in-zone see a "Local delivery" option. StockSpot picks the closest in-stock location automatically.</p>
+
+          <h2 id="transfers">Store transfers</h2>
+          <p>If the customer's nearest store is out but another location has stock, StockSpot offers a transfer:</p>
+          <pre><code>Transfer flow:
+Customer chooses "Transfer to [nearest store]"
+→ Order created, tagged "stockspot-transfer"
+→ Pick-list sent to the source location
+→ Source packs & ships to destination
+→ Destination notifies customer on arrival</code></pre>
+          <p>Set per-location transfer times under <strong>Locations → Transfer settings</strong>. Transfers can be fulfilled via your own couriers, Shopify Shipping, or a third-party integration.</p>
+
+          <h2 id="pos">POS integration</h2>
+          <p>On the Plus plan, StockSpot integrates natively with Shopify POS:</p>
+          <ul>
+            <li>Pickup orders appear in POS as "To pick up today" lists.</li>
+            <li>Transfer requests show as inbound/outbound pick lists per store.</li>
+            <li>Mark picked up / transferred directly from the POS tablet.</li>
+          </ul>
+
+          <h2 id="api">REST API</h2>
+          <p>Plus plan includes a REST API at <code>https://api.soar.studio/stockspot/v1</code>.</p>
+          <ul>
+            <li><code>GET /locations</code> — list configured locations</li>
+            <li><code>GET /availability?product_id=X&amp;postcode=Y</code> — live availability lookup</li>
+            <li><code>POST /pickup-orders</code> — create a pickup order programmatically</li>
+            <li><code>POST /transfer-requests</code> — initiate a store transfer</li>
           </ul>
 
           <h2 id="webhooks">Webhooks</h2>
-          <p>On the Plus plan, every alert can POST to a URL you control. Payload shape:</p>
-          <pre><code>{
-  "event": "stockspot.alert.low_stock",
-  "created_at": "2026-10-28T14:00:00Z",
-  "shop": "yourstore.myshopify.com",
-  "product_id": 123456789,
-  "variant_id": 987654321,
-  "sku": "AF-001-32-TEAL",
-  "title": "AquaFlask Bottle 32oz / Teal",
-  "inventory": 2,
-  "threshold": 5,
-  "location_id": 1,
-  "location_name": "Main Warehouse"
-}</code></pre>
-
-          <h2 id="api">REST API</h2>
-          <p>Plus plan includes a REST API at <code>https://api.soar.studio/stockspot/v1</code>. Endpoints:</p>
-          <ul>
-            <li><code>GET /alerts</code> — list recent alerts</li>
-            <li><code>GET /thresholds</code> — list configured thresholds</li>
-            <li><code>POST /thresholds</code> — set a threshold</li>
-            <li><code>GET /products</code> — list tracked products</li>
-          </ul>
-          <p>Auth is via API key — generate one from <strong>Settings → API</strong>.</p>
-
-          <h2 id="integrations">Integrations</h2>
-          <p>StockSpot has native integrations with:</p>
-          <ul>
-            <li><strong>Slack</strong> — all plans</li>
-            <li><strong>Microsoft Teams</strong> — Growth and Plus</li>
-            <li><strong>Zapier</strong> — Plus (3,000+ app connections)</li>
-            <li><strong>Make.com</strong> — Plus</li>
-            <li><strong>Google Sheets</strong> — Growth and Plus (auto-export reports)</li>
-          </ul>
+          <p>Subscribe to StockSpot events:</p>
+          <pre><code>Events:
+  stockspot.pickup.created
+  stockspot.pickup.ready
+  stockspot.pickup.collected
+  stockspot.transfer.requested
+  stockspot.transfer.arrived
+  stockspot.delivery.scheduled</code></pre>
 
           <h2 id="troubleshooting">Troubleshooting</h2>
-          <h3>I'm not getting alerts</h3>
+          <h3>Widget doesn't show on PDP</h3>
           <ol>
-            <li>Check <strong>Alerts → Delivery log</strong> to see if alerts were sent.</li>
-            <li>Verify the email didn't land in spam. Whitelist <code>alerts@soar.studio</code>.</li>
-            <li>Confirm the Slack integration is still authorized (reconnect under Channels).</li>
-            <li>Check thresholds — the inventory may actually be above your threshold.</li>
+            <li>Confirm the <strong>StockSpot: Store availability</strong> app block is added to your product template and saved.</li>
+            <li>Make sure the product is tracked in StockSpot (check <strong>Products</strong> in the dashboard).</li>
+            <li>Clear your theme preview cache.</li>
           </ol>
 
-          <h3>Alerts fire too often</h3>
-          <p>Set a <strong>debounce window</strong> in Settings — StockSpot will send at most one alert per SKU per time window (default 1 hour).</p>
+          <h3>No locations shown for a postcode</h3>
+          <p>Check your widget's default radius setting. The customer's postcode may be outside all location radii — StockSpot shows a fallback message in that case.</p>
 
           <div class="callout warn">
-            <strong>Still stuck?</strong> Email <a href="mailto:support@soar.studio">support@soar.studio</a> with your Shopify store URL and we'll look into it, usually same business day.
+            <strong>Still stuck?</strong> Email <a href="mailto:support@soar.studio">support@soar.studio</a> with your Shopify store URL and the product you're testing. We usually reply same business day.
           </div>
 
           <h2 id="changelog">Changelog</h2>
-          <p><strong>v1.4</strong> — Multi-location rollup support, Google Sheets auto-export</p>
-          <p><strong>v1.3</strong> — Native Microsoft Teams integration, smart threshold suggestions</p>
-          <p><strong>v1.2</strong> — Webhook support, REST API (Plus plan)</p>
-          <p><strong>v1.1</strong> — SMS alerts, A/B threshold testing</p>
-          <p><strong>v1.0</strong> — Initial launch (email + Slack, global thresholds)</p>
+          <p><strong>v1.3</strong> — Shopify POS native integration (Plus plan)</p>
+          <p><strong>v1.2</strong> — Store-to-store transfer requests with ETA tracking</p>
+          <p><strong>v1.1</strong> — Local delivery zones (postcode, radius, custom polygons)</p>
+          <p><strong>v1.0</strong> — Initial launch (store locator + click &amp; collect)</p>
 
           <nav class="docs-footer-nav">
             <a href="smartcart-docs.html">
@@ -258,7 +266,6 @@ Frequency: at most once per hour per SKU</code></pre>
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Highlight current anchor in sidebar
     const sidebarLinks = document.querySelectorAll('.docs-sidebar a[href^="#"]');
     const sections = document.querySelectorAll('.docs-main h2[id], .docs-main h1[id]');
     function setActive() {

@@ -746,6 +746,58 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex; align-items: center; justify-content: center;
 }
 
+/* ===== LOCATOR WIDGET (StockSpot) ===== */
+.locator-input {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg-soft); border-radius: 10px;
+  padding: 10px 12px; margin: 16px 0 14px;
+  font-size: 13px;
+}
+.locator-input svg { width: 16px; height: 16px; color: var(--text-dim); flex-shrink: 0; }
+.locator-input span { flex: 1; color: var(--text); font-weight: 500; }
+.locator-input button {
+  background: none; border: none; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--text-dim);
+  text-decoration: underline; padding: 0;
+}
+
+.locator-list {
+  list-style: none; padding: 0; margin: 0 0 16px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.locator-list li {
+  display: grid; grid-template-columns: 24px 1fr auto;
+  gap: 12px; align-items: center;
+  padding: 12px 10px; border-radius: 10px;
+  transition: background 0.15s ease;
+}
+.locator-list li:hover { background: var(--bg-soft); }
+.loc-pin {
+  width: 10px; height: 10px; border-radius: 999px;
+  display: inline-block; font-size: 0; line-height: 0;
+  margin: 0 auto;
+}
+.loc-pin-green { background: #16a34a; box-shadow: 0 0 0 4px rgba(22,163,74,0.12); }
+.loc-pin-yellow { background: #f59e0b; box-shadow: 0 0 0 4px rgba(245,158,11,0.12); }
+.loc-pin-grey { background: #9ca3af; box-shadow: 0 0 0 4px rgba(156,163,175,0.12); }
+
+.loc-info { display: flex; flex-direction: column; min-width: 0; }
+.loc-info strong { font-size: 13px; font-weight: 600; line-height: 1.2; }
+.loc-info span { font-size: 11px; color: var(--text-mute); margin-top: 2px; }
+
+.loc-status { text-align: right; }
+.loc-status strong { display: block; font-size: 12px; font-weight: 700; }
+.loc-status small { display: block; font-size: 10px; color: var(--text-mute); margin-top: 2px; }
+.loc-ok strong { color: #16a34a; }
+.loc-low strong { color: #d97706; }
+.loc-transfer strong { color: #6b7280; }
+
+.locator-actions {
+  display: flex; gap: 8px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.locator-actions .btn { flex: 1; justify-content: center; font-size: 12px; padding: 10px 14px; }
+
 /* ===== DOCS ===== */
 .docs-layout {
   display: grid; grid-template-columns: 260px 1fr; gap: 48px;
