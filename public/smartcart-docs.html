@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SmartCart Documentation — SOAR</title>
-  <meta name="description" content="Install, configure, and extend SmartCart — SOAR's in-cart upsell app for Shopify." />
+  <meta name="description" content="Install and set up SmartCart, the slide cart drawer and rewards app for Shopify by SOAR." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +22,7 @@
         <a href="index.html#about">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a href="smartcart.html" class="btn btn-dark btn-sm">Install SmartCart <span class="arrow">→</span></a>
+      <a href="https://apps.shopify.com/smartcart-3" class="btn btn-dark btn-sm">Install SmartCart <span class="arrow">→</span></a>
     </div>
   </header>
 
@@ -42,27 +42,28 @@
           <h4>Getting started</h4>
           <ul>
             <li><a href="#overview" class="active">Overview</a></li>
+            <li><a href="#plans">Plans</a></li>
             <li><a href="#install">Install</a></li>
-            <li><a href="#quickstart">Quickstart</a></li>
+            <li><a href="#enable">Turn on the drawer</a></li>
           </ul>
-          <h4>Core features</h4>
+          <h4>Drawer settings</h4>
           <ul>
-            <li><a href="#upsells">Upsell rules</a></li>
+            <li><a href="#drawer">Drawer &amp; wishlist</a></li>
             <li><a href="#shipping">Free shipping bar</a></li>
-            <li><a href="#gifts">Gift with purchase</a></li>
-            <li><a href="#messaging">Cart messaging</a></li>
+            <li><a href="#urgency">Urgency &amp; low stock</a></li>
+            <li><a href="#addons">Add-on suggestions</a></li>
+            <li><a href="#discounts">Discount codes</a></li>
+            <li><a href="#badges">NEW badge &amp; checkout</a></li>
           </ul>
-          <h4>Advanced</h4>
+          <h4>Rewards (Growth)</h4>
           <ul>
-            <li><a href="#ab-testing">A/B testing</a></li>
-            <li><a href="#ai-recommendations">AI recommendations</a></li>
-            <li><a href="#checkout-extensions">Checkout extensions</a></li>
-            <li><a href="#styling">Custom styling</a></li>
+            <li><a href="#rewards">Reward tiers</a></li>
+            <li><a href="#rewards-discount">Rewards discount</a></li>
+            <li><a href="#combinations">Discount combinations</a></li>
           </ul>
           <h4>Support</h4>
           <ul>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
-            <li><a href="#changelog">Changelog</a></li>
             <li><a href="contact.html">Contact support</a></li>
           </ul>
         </aside>
@@ -70,152 +71,126 @@
         <article class="docs-main">
           <h1 id="overview">SmartCart Documentation</h1>
           <p class="docs-lede">
-            SmartCart is an in-cart upsell and conversion toolkit for Shopify. This guide covers install, configuration, and the advanced features that drive real AOV gains.
+            SmartCart replaces your store's cart with a slide-out drawer: a free shipping or rewards progress bar, add-on suggestions, discount codes, a wishlist and free gifts. This guide covers installing it and every setting.
           </p>
 
           <div class="callout">
-            <strong>New here?</strong> Start with the <a href="#quickstart">quickstart</a> to go live in 5 minutes, or <a href="smartcart.html">view the product page</a> for a feature overview.
+            <strong>New here?</strong> Follow <a href="#install">Install</a> and <a href="#enable">Turn on the drawer</a> — it takes a few minutes. Or <a href="smartcart.html">view the product page</a> for an overview.
           </div>
 
-          <h2 id="install">Install</h2>
-          <p>SmartCart ships as a Shopify Online Store 2.0 app with an embedded admin and a theme-level app block. To install:</p>
-          <ol>
-            <li>Open your Shopify admin.</li>
-            <li>Go to <strong>Apps → Shopify App Store</strong>.</li>
-            <li>Search for <code>SmartCart by SOAR</code> and click <strong>Add app</strong>.</li>
-            <li>Approve the OAuth permissions (read products, read/write cart, read orders).</li>
-            <li>In the SmartCart admin, click <strong>Enable in theme</strong> — this activates the app block in your live theme.</li>
-          </ol>
-
-          <div class="callout warn">
-            <strong>Note:</strong> On older themes (pre-Online Store 2.0), SmartCart falls back to a script-based install. Email <a href="mailto:support@soar.studio">support@soar.studio</a> for help if your theme doesn't support app blocks.
-          </div>
-
-          <h2 id="quickstart">Quickstart</h2>
-          <p>The fastest way to see SmartCart in action:</p>
-          <h3>1. Turn on the free shipping bar</h3>
-          <p>Go to <strong>Settings → Free shipping</strong>. Enter your shipping threshold (e.g., <code>$75</code>). SmartCart handles the rest — the progress bar appears automatically in your cart drawer.</p>
-
-          <h3>2. Add your first upsell rule</h3>
-          <p>Go to <strong>Rules → New rule</strong>. Pick a template:</p>
+          <h2 id="plans">Plans</h2>
+          <p>Both plans include a 7-day free trial and are billed through your Shopify invoice.</p>
           <ul>
-            <li><strong>Pair-together</strong>: when cart contains Product A, suggest Product B</li>
-            <li><strong>Bundle discount</strong>: 10% off when cart has both A and B</li>
-            <li><strong>AOV threshold</strong>: when cart total &gt; $X, offer upgrade</li>
+            <li><strong>Starter — $19.99/month</strong>: the cart drawer, free shipping progress bar, add-on suggestions, discount codes, wishlist, urgency notice, low-stock alerts, NEW badges, payment icons and all text and colour settings.</li>
+            <li><strong>Growth — $49.99/month</strong>: everything in Starter, plus the tiered rewards bar with up to 3 rewards (free shipping, a gift the shopper chooses, an automatic gift), made free at checkout by the SmartCart rewards discount.</li>
           </ul>
 
-          <h3>3. Preview and publish</h3>
-          <p>Click <strong>Preview</strong> to see the rule live on a test cart. When happy, hit <strong>Publish</strong>.</p>
+          <h2 id="install">Install</h2>
+          <ol>
+            <li>Open <a href="https://apps.shopify.com/smartcart-3">SmartCart on the Shopify App Store</a> and click <strong>Install</strong>.</li>
+            <li>Approve the access SmartCart needs: read products and inventory (for add-ons, gifts and low-stock alerts), read themes (to check the drawer is switched on) and write discounts (for the rewards discount).</li>
+            <li>Choose <strong>Starter</strong> or <strong>Growth</strong>. Your 7-day free trial starts.</li>
+          </ol>
 
-          <h2 id="upsells">Upsell rules</h2>
-          <p>Rules are the engine of SmartCart. Each rule has a <strong>trigger</strong>, a <strong>target</strong>, and an optional <strong>incentive</strong>.</p>
-          <pre><code>Rule: "Mug + Hat Pair"
-Trigger: cart contains "Insulated Mug"
-Target: suggest "Trail Hat"
-Incentive: 15% off bundle
-Position: below cart items
-Max display: once per session</code></pre>
+          <h2 id="enable">Turn on the drawer</h2>
+          <ol>
+            <li>In SmartCart, click <strong>Enable SmartCart</strong>. The theme editor opens on <strong>App embeds</strong>.</li>
+            <li>Switch <strong>SmartCart</strong> on and click <strong>Save</strong>.</li>
+            <li>SmartCart's home page now shows <strong>SmartCart is live on your store</strong>.</li>
+          </ol>
+          <div class="callout warn">
+            <strong>Tip:</strong> To try SmartCart before your customers see it, turn it on in a duplicate of your theme and use <strong>Preview</strong>. To go back to your theme's own cart, switch SmartCart off under App embeds.
+          </div>
+          <p>All drawer settings below are in the theme editor under <strong>App embeds → SmartCart</strong>.</p>
 
-          <h3>Trigger types</h3>
+          <h2 id="drawer">Drawer &amp; wishlist</h2>
           <ul>
-            <li>Cart contains specific product / variant / SKU</li>
-            <li>Cart total above / below threshold</li>
-            <li>Cart item count &gt; X</li>
-            <li>Customer tag (e.g., only VIPs see this)</li>
-            <li>UTM / referrer source</li>
+            <li><strong>Drawer title</strong>, <strong>empty bag message</strong> and <strong>empty bag button text</strong>.</li>
+            <li><strong>Open cart drawer when a product is added</strong> and <strong>when the cart icon is clicked</strong>.</li>
+            <li><strong>Button color</strong> for the checkout and other buttons.</li>
+            <li><strong>Enable wishlist</strong>: adds a heart to bag items and a wishlist tab. Shoppers can move items back to the bag. The wishlist is saved in the shopper's browser.</li>
           </ul>
 
           <h2 id="shipping">Free shipping bar</h2>
-          <p>The free shipping progress bar shows customers how close they are to free shipping. Customization options:</p>
           <ul>
-            <li><strong>Threshold</strong>: dollar amount for free shipping</li>
-            <li><strong>Progress color</strong>: inherits your theme accent by default</li>
-            <li><strong>Message templates</strong>: <code>You're $12 away from free shipping!</code> or custom</li>
-            <li><strong>Reward message</strong>: shown after threshold is hit — <code>🎉 You unlocked free shipping!</code></li>
+            <li><strong>Free shipping threshold</strong> in your store's default currency. Set 0 to hide the bar.</li>
+            <li><strong>Progress message</strong> (<code>[amount]</code> is replaced with what's left to spend) and <strong>success message</strong>.</li>
+            <li><strong>Info tooltip</strong> shown on the ⓘ icon, and <strong>progress bar color</strong>.</li>
           </ul>
-
-          <h2 id="gifts">Gift with purchase</h2>
-          <p>Auto-add a free product to the cart when a condition is met.</p>
-          <pre><code>Gift rule: "Free sample pack over $50"
-Trigger: cart subtotal >= $50
-Add: Sample Pack (variant 123)
-Pricing: $0 (automatic 100% discount)
-Remove if: cart drops below $50</code></pre>
-
-          <h2 id="messaging">Cart messaging</h2>
-          <p>Show dynamic nudges in the cart based on state. Templates include:</p>
-          <ul>
-            <li><strong>Scarcity</strong>: <code>Only {inventory} left — order soon</code></li>
-            <li><strong>Shipping cutoff</strong>: <code>Order in {hours}h {minutes}m to ship today</code></li>
-            <li><strong>Returns reassurance</strong>: <code>Free returns within 30 days</code></li>
-            <li><strong>Trust badges</strong>: SSL / Shopify Secure Checkout logos</li>
-          </ul>
-
-          <h2 id="ab-testing">A/B testing</h2>
-          <p>Growth and Plus plans include built-in A/B testing. For any rule:</p>
-          <ol>
-            <li>Click <strong>Duplicate as variant</strong></li>
-            <li>Edit the variant (different copy, product, incentive)</li>
-            <li>Set traffic split (default 50/50)</li>
-            <li>SmartCart tracks conversion rate and incremental AOV per variant</li>
-            <li>After statistical significance is reached, click <strong>Promote winner</strong></li>
-          </ol>
           <div class="callout info">
-            <strong>Tip:</strong> SmartCart uses sequential testing — you can call a winner as soon as significance is reached, no need to wait for a fixed sample size.
+            <strong>Note:</strong> The free shipping bar shows progress only. Free shipping itself comes from your store's shipping rates or a free shipping discount — set the threshold to match it. On Growth, a free shipping reward tier can make shipping free instead (see <a href="#rewards">Reward tiers</a>), and the rewards bar replaces this bar.
           </div>
 
-          <h2 id="ai-recommendations">AI recommendations</h2>
-          <p>Plus plan unlocks AI-powered pair recommendations trained on your store's order history.</p>
-          <p>How it works:</p>
+          <h2 id="urgency">Urgency &amp; low stock</h2>
+          <ul>
+            <li><strong>Urgency notice</strong>, e.g. <em>Your items aren't reserved, checkout quickly to make sure you don't miss out.</em></li>
+            <li><strong>Low-stock warning</strong> on bag items at or below a stock level you choose, with <em>Last item, order soon</em> and <em>Only [count] left, order soon</em> messages. It works for products that track inventory and stop selling when out of stock.</li>
+          </ul>
+
+          <h2 id="addons">Add-on suggestions</h2>
+          <ul>
+            <li>Heading and subheading, e.g. <em>Add a little extra</em>.</li>
+            <li><strong>Add-ons collection</strong> (optional): products from it are suggested first, e.g. accessories or low-price items.</li>
+            <li><strong>Recommendation type</strong>: related products, or complementary products set up in the Shopify Search &amp; Discovery app.</li>
+            <li><strong>Number of products</strong> to show.</li>
+            <li>When an add-on would unlock free shipping, it's listed first with its own subheading.</li>
+          </ul>
+
+          <h2 id="discounts">Discount codes</h2>
+          <p>Shoppers apply and remove discount codes in the drawer. You can change the heading, placeholder, button text and the invalid code message (<code>[code]</code> is replaced with the code entered). Codes are created in your Shopify admin under <strong>Discounts</strong>.</p>
+
+          <h2 id="badges">NEW badge &amp; checkout</h2>
+          <ul>
+            <li><strong>NEW badge</strong> on products with a tag you choose (default <code>new</code>) and, optionally, products added in the last X days.</li>
+            <li><strong>Checkout button text</strong>, e.g. <em>Checkout securely</em>.</li>
+            <li><strong>Payment icons</strong> for the payment methods enabled in your store.</li>
+          </ul>
+
+          <h2 id="rewards">Reward tiers <small>(Growth)</small></h2>
+          <p>In SmartCart, open <strong>Rewards</strong>:</p>
           <ol>
-            <li>SmartCart analyzes 90 days of order data</li>
-            <li>Identifies products frequently bought together</li>
-            <li>Builds a product-pair model specific to your store</li>
-            <li>Serves recommendations in the cart drawer dynamically</li>
+            <li>Click <strong>Add tier</strong> (up to 3). For each tier set the <strong>cart total to unlock</strong>, the <strong>reward</strong> and its <strong>label in the bar</strong>.</li>
+            <li>Reward types:
+              <ul>
+                <li><strong>Free shipping</strong>: shipping is free at checkout once the cart reaches the amount.</li>
+                <li><strong>Choose a gift</strong>: the shopper picks one gift from up to 10 products you select.</li>
+                <li><strong>Automatic gift</strong>: the product is added to the bag automatically.</li>
+              </ul>
+            </li>
+            <li><strong>Rewards stack</strong>: shoppers keep the rewards of lower tiers. Turn it off to give only the highest reward reached.</li>
+            <li>Edit the <strong>progress message</strong> (<code>[amount]</code>, <code>[reward]</code>) and the <strong>all rewards unlocked</strong> message.</li>
+            <li>Switch on <strong>Show rewards in the cart drawer</strong> and click <strong>Save</strong>.</li>
           </ol>
-          <p>The model retrains weekly. You can also exclude specific SKUs from being recommended via <strong>Settings → AI exclusions</strong>.</p>
+          <p>Gifts appear in the bag at $0.00 with the original price struck through. If the cart drops below a tier, its gift is removed. Gift products must be available on the Online Store sales channel — to keep a gift out of your catalog, hide it from collections and search instead of unpublishing it.</p>
 
-          <h2 id="checkout-extensions">Checkout extensions</h2>
-          <p>Shopify Plus merchants on the Plus plan get native Checkout Extension support for post-purchase upsells.</p>
-          <pre><code>Flow:
-Customer completes checkout
-→ Thank-you page shows SmartCart upsell
-→ One-click add (no re-entering card)
-→ Updated receipt sent</code></pre>
+          <h2 id="rewards-discount">Rewards discount</h2>
+          <p>The drawer adds the gifts, but they're only free once the rewards discount is on. On the Rewards page, click <strong>Activate rewards discount</strong>. SmartCart creates an automatic discount called <strong>SmartCart rewards</strong> that makes gift items and the cheapest shipping option free at checkout when the cart reaches their tier. You can pause or delete it in <strong>Discounts</strong>.</p>
+          <p>Reward amounts are in your store's currency. Shoppers using another currency through Shopify Markets see them converted.</p>
 
-          <h2 id="styling">Custom styling</h2>
-          <p>SmartCart inherits your theme by default, but you can override:</p>
-          <pre><code>/* In SmartCart Settings → Advanced CSS */
-.sc-upsell-card {
-  border-radius: 16px;
-  border: 1px solid #e0e0e0;
-}
-.sc-progress-bar {
-  background: linear-gradient(90deg, #dcf24a, #c7e033);
-}</code></pre>
+          <h2 id="combinations">Discount combinations</h2>
+          <p>If a shopper uses a discount that doesn't combine with the rewards, Shopify applies it instead and gifts and shipping are charged. The Rewards page lists these discounts. To let them work together, open each one and under <strong>Combinations</strong> tick <strong>Product discounts</strong> and <strong>Shipping discounts</strong> (free shipping discounts only have Product discounts).</p>
 
           <h2 id="troubleshooting">Troubleshooting</h2>
-          <h3>Upsells aren't showing</h3>
+          <h3>The drawer doesn't open</h3>
           <ol>
-            <li>Verify the SmartCart app block is enabled in your theme (<strong>Online Store → Themes → Customize → App blocks</strong>).</li>
-            <li>Check the rule is published (not in draft).</li>
-            <li>Make sure the trigger condition actually matches your test cart.</li>
-            <li>Clear your browser's localStorage — SmartCart respects "max display per session".</li>
+            <li>Check SmartCart is switched on in your <strong>live</strong> theme: <strong>Online Store → Themes → Customize → App embeds</strong>, then click <strong>Save</strong>.</li>
+            <li>Check <strong>Open cart drawer when a product is added</strong> and <strong>when the cart icon is clicked</strong> are on.</li>
+            <li>If another cart drawer app is installed, turn it off — two drawers conflict.</li>
           </ol>
 
-          <h3>Styles look off</h3>
-          <p>Check <strong>Settings → Theme compatibility</strong>. If your theme uses unusual CSS resets, enable <strong>Isolated styling mode</strong> and SmartCart will use its own CSS without inheriting the theme.</p>
+          <h3>Gifts or shipping aren't free at checkout</h3>
+          <ol>
+            <li>Check the Rewards page says <strong>Rewards discount is active</strong>.</li>
+            <li>Check the shopper isn't using a discount listed under <a href="#combinations">discounts that cancel the rewards</a>.</li>
+            <li>Check the gift product is available on the Online Store sales channel.</li>
+          </ol>
+
+          <h3>No low-stock warning</h3>
+          <p>The product must track inventory and stop selling when out of stock, and its stock must be at or below your warning level.</p>
 
           <div class="callout warn">
-            <strong>Still stuck?</strong> Email <a href="mailto:support@soar.studio">support@soar.studio</a> with your store URL and we'll debug it — usually same business day.
+            <strong>Still stuck?</strong> Email <a href="mailto:support@soar.studio">support@soar.studio</a> with your store URL.
           </div>
-
-          <h2 id="changelog">Changelog</h2>
-          <p><strong>v2.1</strong> — AI recommendations (Plus), Checkout Extension support</p>
-          <p><strong>v2.0</strong> — Full rewrite on Online Store 2.0 app blocks, sequential A/B testing</p>
-          <p><strong>v1.4</strong> — Gift-with-purchase rules, scarcity messaging templates</p>
-          <p><strong>v1.3</strong> — Custom CSS editor, isolated styling mode</p>
-          <p><strong>v1.0</strong> — Initial launch (upsells + free shipping bar)</p>
 
           <nav class="docs-footer-nav">
             <a href="stockspot-docs.html">
