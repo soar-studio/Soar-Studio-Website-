@@ -935,3 +935,9 @@ a { color: inherit; text-decoration: none; }
   .appcard { width: 260px; }
   .appcard-b { width: 280px; }
 }
+
+/* Two-plan pricing (SmartCart) */
+.pricing-grid.pricing-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 720px; }
+@media (max-width: 960px) {
+  .pricing-grid.pricing-grid-2 { grid-template-columns: 1fr; max-width: 420px; }
+}
